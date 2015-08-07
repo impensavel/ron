@@ -16,7 +16,6 @@ use ArrayIterator;
 use Countable;
 use IteratorAggregate;
 
-use Carbon\Carbon;
 use GuzzleHttp\Client;
 use Impensavel\Essence\XMLEssence;
 
@@ -143,20 +142,7 @@ class Burgundy implements Countable, IteratorAggregate
     {
         return function ($data)
         {
-            $properties = $data['properties'];
-
-            $dates = [
-                FeedFormatInterface::FEED_PUBLISHED,
-                FeedFormatInterface::FEED_UPDATED,
-            ];
-
-            foreach ($dates as $date) {
-                if (isset($properties[$date])) {
-                    $properties[$date] = new Carbon($properties[$date]);
-                }
-            }
-
-            $this->stories[] = new Story($properties);
+            $this->stories[] = new Story($data['properties']);
         };
     }
 

@@ -12,14 +12,64 @@
 
 namespace Impensavel\Ron;
 
+use Carbon\Carbon;
+
 class Story
 {
-    protected $id; // guid
-    protected $link;
+    /**
+     * Story ID
+     *
+     * @access  protected
+     * @var     string
+     */
+    protected $id;
+
+    /**
+     * Story URL
+     *
+     * @access  protected
+     * @var     string
+     */
+    protected $url;
+
+    /**
+     * Story Title
+     *
+     * @access  protected
+     * @var     string
+     */
     protected $title;
-    protected $description; // subtitle / summary / content
-    protected $author; // contributor / managingEditor
-    protected $published; // pubDate / lastBuildDate(channel)
+
+    /**
+     * Story content
+     *
+     * @access  protected
+     * @var     string
+     */
+    protected $content;
+
+    /**
+     * Story Author
+     *
+     * @access  protected
+     * @var     string
+     */
+    protected $author;
+
+    /**
+     * Story published date
+     *
+     * @access  protected
+     * @var     Carbon
+     */
+    protected $published;
+
+    /**
+     * Story updated date
+     *
+     * @access  protected
+     * @var     Carbon
+     */
     protected $updated;
 
     /**
@@ -33,16 +83,21 @@ class Story
     {
         foreach ($properties as $property => $value) {
             if (property_exists($this, $property)) {
-                $this->$property = $value;
+                $isDate = in_array($property, [
+                    FeedFormatInterface::FEED_PUBLISHED,
+                    FeedFormatInterface::FEED_UPDATED,
+                ]);
+
+                $this->$property = $isDate ? new Carbon($value) : $value;
             }
         }
     }
 
     /**
-     * Get the Item ID
+     * Get the Story ID
      *
      * @access  public
-     * @return
+     * @return  string
      */
     public function getID()
     {
@@ -50,21 +105,21 @@ class Story
     }
 
     /**
-     * Get Item link (URL)
+     * Get the Story URL
      *
      * @access  public
-     * @return
+     * @return  string
      */
-    public function getLink()
+    public function getUrl()
     {
-        return $this->link;
+        return $this->url;
     }
 
     /**
-     * Get
+     * Get the Story Title
      *
      * @access  public
-     * @return
+     * @return  string
      */
     public function getTitle()
     {
@@ -72,21 +127,21 @@ class Story
     }
 
     /**
-     * Get
+     * Get the Story Content
      *
      * @access  public
-     * @return
+     * @return  string
      */
-    public function getDescription()
+    public function getContent()
     {
-        return $this->description;
+        return $this->content;
     }
 
     /**
-     * Get
+     * Get the Story Author
      *
      * @access  public
-     * @return
+     * @return  string
      */
     public function getAuthor()
     {
@@ -94,10 +149,10 @@ class Story
     }
 
     /**
-     * Get
+     * Get the Story published date
      *
      * @access  public
-     * @return
+     * @return  Carbon
      */
     public function getPublished()
     {
@@ -105,24 +160,32 @@ class Story
     }
 
     /**
-     * Get
+     * Get the Story updated date
      *
      * @access  public
-     * @return
+     * @return  Carbon
      */
     public function getUpdated()
     {
         return $this->updated;
     }
 
+    /**
+     * Get an array with the Story properties
+     *
+     * @access  public
+     * @return  array
+     */
     public function toArray()
     {
         return [
-            'id'          => $this->id,
-            'link'        => $this->link,
-            'title'       => $this->title,
-            'description' => $this->description,
-            'author'      => $this->author,
+            'id'        => $this->id,
+            'url'       => $this->url,
+            'title'     => $this->title,
+            'content'   => $this->content,
+            'author'    => $this->author,
+            'published' => $this->published,
+            'updated'   => $this->updated,
         ];
     }
 }
