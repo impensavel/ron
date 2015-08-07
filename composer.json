@@ -13,9 +13,9 @@
     }
   ],
   "require": {
-    "php": ">=5.5.0",
+    "php": ">=5.4.0",
     "impensavel/essence": "~1.0",
-    "guzzlehttp/guzzle": "~6.0",
+    "guzzlehttp/guzzle": "~5.0",
     "nesbot/carbon": "~1.0"
   },
   "require-dev": {
