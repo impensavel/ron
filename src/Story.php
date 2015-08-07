@@ -41,7 +41,7 @@ class Story
     protected $title;
 
     /**
-     * Story content
+     * Story Content
      *
      * @access  protected
      * @var     string
@@ -57,7 +57,7 @@ class Story
     protected $author;
 
     /**
-     * Story published date
+     * Story Published Date
      *
      * @access  protected
      * @var     Carbon
@@ -65,7 +65,7 @@ class Story
     protected $published;
 
     /**
-     * Story updated date
+     * Story Updated Date
      *
      * @access  protected
      * @var     Carbon
@@ -83,6 +83,7 @@ class Story
     {
         foreach ($properties as $property => $value) {
             if (property_exists($this, $property)) {
+                // create Carbon objects for date properties
                 $isDate = in_array($property, [
                     FeedFormatInterface::FEED_PUBLISHED,
                     FeedFormatInterface::FEED_UPDATED,
@@ -149,7 +150,7 @@ class Story
     }
 
     /**
-     * Get the Story published date
+     * Get the Story Published Date
      *
      * @access  public
      * @return  Carbon
@@ -160,7 +161,7 @@ class Story
     }
 
     /**
-     * Get the Story updated date
+     * Get the Story Updated Date
      *
      * @access  public
      * @return  Carbon
