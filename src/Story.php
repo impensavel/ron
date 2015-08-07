@@ -99,7 +99,7 @@ class Story
      * @access  public
      * @return  string
      */
-    public function getID()
+    public function getId()
     {
         return $this->id;
     }
