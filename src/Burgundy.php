@@ -30,20 +30,28 @@ class Burgundy implements Countable, IteratorAggregate
     protected $essence;
 
     /**
-     * Story Items
+     * XML Essence configuration
      *
      * @access  protected
      * @var     array
      */
-    protected $stories = [];
+    protected $config = [];
 
     /**
-     * Namespace registry
+     * XML Essence Namespaces
      *
      * @access  protected
      * @var     array
      */
     protected $namespaces = [];
+
+    /**
+     * News Stories
+     *
+     * @access  protected
+     * @var     array
+     */
+    protected $stories = [];
 
     /**
      * Burgundy constructor
@@ -58,6 +66,24 @@ class Burgundy implements Countable, IteratorAggregate
     }
 
     /**
+     * Add a Feed Format
+     *
+     * @access  protected
+     * @param   FeedFormatInterface $format
+     * @return  void
+     */
+    protected function addFeedFormat(FeedFormatInterface $format)
+    {
+        $this->config[$format->getItemRoot()] = [
+            'map'      => $format->getPropertyMap(),
+            'callback' => $this->getStoryProcessor(),
+        ];
+
+        // register namespaces
+        $this->namespaces = array_merge($this->namespaces, $format->getNamespaces());
+    }
+
+    /**
      * Set XML parser
      *
      * @access  public
@@ -66,19 +92,11 @@ class Burgundy implements Countable, IteratorAggregate
      */
     public function setParser(array $formats)
     {
-        $config = [];
-
         foreach ($formats as $format) {
-            $config[$format->getItemRoot()] = [
-                'map'      => $format->getPropertyMap(),
-                'callback' => $this->getStoryProcessor(),
-            ];
-
-            // register namespaces
-            $this->namespaces = array_merge($this->namespaces, $format->getNamespaces());
+            $this->addFeedFormat($format);
         }
 
-        $this->essence = new XMLEssence($config);
+        $this->essence = new XMLEssence($this->config);
 
         return $this;
     }
@@ -147,7 +165,7 @@ class Burgundy implements Countable, IteratorAggregate
     }
 
     /**
-     * Read News from an input
+     * Read News Stories
      *
      * @access  public
      * @param   mixed  $input
@@ -164,5 +182,16 @@ class Burgundy implements Countable, IteratorAggregate
         $this->essence->extract($input, [
             'namespaces' => $this->namespaces,
         ]);
+    }
+
+    /**
+     * Clear News Stories
+     *
+     * @access  public
+     * @return  void
+     */
+    public function clear()
+    {
+        $this->stories = [];
     }
 }
