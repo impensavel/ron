@@ -111,7 +111,9 @@ class Burgundy implements Countable, IteratorAggregate
      */
     public function read($input)
     {
-        $this->essence->extract($input, array(), $this);
+        $this->essence->extract($input, array(
+            'options' => LIBXML_PARSEHUGE|LIBXML_DTDLOAD,
+        ), $this);
     }
 
     /**
