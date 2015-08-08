@@ -16,16 +16,16 @@ use RuntimeException;
 
 class RonException extends RuntimeException
 {
-	/**
-	 * Get the previous Exception message
-	 *
-	 * @access  public
-	 * @return  string|null
-	 */
-	public function getPreviousMessage()
-	{
-		$previous = $this->getPrevious();
+    /**
+     * Get the previous Exception message
+     *
+     * @access  public
+     * @return  string|null
+     */
+    public function getPreviousMessage()
+    {
+        $previous = $this->getPrevious();
 
-		return $previous ? null : $previous->getMessage();
-	}
+        return $previous ? null : $previous->getMessage();
+    }
 }
