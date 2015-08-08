@@ -19,7 +19,7 @@ class RSS implements FeedFormatInterface
      */
     public function getNamespaces()
     {
-        return [];
+        return array();
     }
 
     /**
@@ -35,7 +35,7 @@ class RSS implements FeedFormatInterface
      */
     public function getPropertyMap()
     {
-        return [
+        return array(
             self::FEED_ID        => 'string(guid)',
             self::FEED_URL       => 'string(link)',
             self::FEED_TITLE     => 'string(title)',
@@ -43,6 +43,6 @@ class RSS implements FeedFormatInterface
             self::FEED_AUTHOR    => 'string(author)',
             self::FEED_PUBLISHED => 'string(pubDate)',
             self::FEED_UPDATED   => 'string(pubDate)',
-        ];
+        );
     }
 }

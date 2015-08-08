@@ -19,13 +19,13 @@ class Atom implements FeedFormatInterface
      */
     public function getNamespaces()
     {
-        return [
+        return array(
             // Atom 1.0
             'a10' => 'http://www.w3.org/2005/Atom',
 
             // Atom 0.3
             'a03' => 'http://purl.org/atom/ns#',
-        ];
+        );
     }
 
     /**
@@ -41,7 +41,7 @@ class Atom implements FeedFormatInterface
      */
     public function getPropertyMap()
     {
-        return [
+        return array(
             self::FEED_ID        => 'string(a03:id|a10:id)',
             self::FEED_URL       => 'string(a03:link[@rel="alternate"]/@href|a10:link[@rel="alternate"]/@href)',
             self::FEED_TITLE     => 'string(a03:title|a10:title)',
@@ -49,6 +49,6 @@ class Atom implements FeedFormatInterface
             self::FEED_AUTHOR    => 'string(a03:author/a03:name|a10:author/a10:name)',
             self::FEED_PUBLISHED => 'string(a03:issued|a10:published)',
             self::FEED_UPDATED   => 'string(a03:modified|a10:updated)',
-        ];
+        );
     }
 }
