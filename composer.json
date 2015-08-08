@@ -2,7 +2,7 @@
   "name": "impensavel/ron",
   "type": "library",
   "description": "A PHP RSS/Atom News Reader Library",
-  "keywords": ["atom", "rss", "feed", "ron", "syndication", "xml"],
+  "keywords": ["atom", "rss", "feed", "news", "reader", "ron", "burgundy", "syndication", "xml"],
   "homepage": "https://github.com/impensavel/ron",
   "license": "MIT",
   "authors": [
@@ -13,9 +13,8 @@
     }
   ],
   "require": {
-    "php": ">=5.4.0",
+    "php": ">=5.3.6",
     "impensavel/essence": "~1.0",
-    "guzzlehttp/guzzle": "~5.0",
     "nesbot/carbon": "~1.0"
   },
   "require-dev": {
