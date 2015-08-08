@@ -16,13 +16,12 @@ use ArrayIterator;
 use Countable;
 use IteratorAggregate;
 
-use GuzzleHttp\Client;
 use Impensavel\Essence\XMLEssence;
 
 class Burgundy implements Countable, IteratorAggregate
 {
     /**
-     * XML parser
+     * XML Essence
      *
      * @access  protected
      * @var     XMLEssence
@@ -30,75 +29,23 @@ class Burgundy implements Countable, IteratorAggregate
     protected $essence;
 
     /**
-     * XML Essence configuration
-     *
-     * @access  protected
-     * @var     array
-     */
-    protected $config = [];
-
-    /**
-     * XML Essence Namespaces
-     *
-     * @access  protected
-     * @var     array
-     */
-    protected $namespaces = [];
-
-    /**
      * News Stories
      *
      * @access  protected
      * @var     array
      */
-    protected $stories = [];
+    protected $stories = array();
 
     /**
      * Burgundy constructor
      *
      * @access  public
-     * @param   \GuzzleHttp\Client $http Guzzle HTTP client
+     * @param   XMLEssence $essence XML Essence
      * @return  Burgundy
      */
-    public function __construct(Client $http)
+    public function __construct(XMLEssence $essence)
     {
-        $this->http = $http;
-    }
-
-    /**
-     * Add a Feed Format
-     *
-     * @access  protected
-     * @param   FeedFormatInterface $format
-     * @return  void
-     */
-    protected function addFeedFormat(FeedFormatInterface $format)
-    {
-        $this->config[$format->getItemRoot()] = [
-            'map'      => $format->getPropertyMap(),
-            'callback' => $this->getStoryProcessor(),
-        ];
-
-        // register namespaces
-        $this->namespaces = array_merge($this->namespaces, $format->getNamespaces());
-    }
-
-    /**
-     * Set XML parser
-     *
-     * @access  public
-     * @param   array  $formats Feed formats
-     * @return  Burgundy
-     */
-    public function setParser(array $formats)
-    {
-        foreach ($formats as $format) {
-            $this->addFeedFormat($format);
-        }
-
-        $this->essence = new XMLEssence($this->config);
-
-        return $this;
+        $this->essence = $essence;
     }
 
     /**
@@ -109,29 +56,34 @@ class Burgundy implements Countable, IteratorAggregate
      * @param   array  $formats Custom feed formats
      * @return  Burgundy
      */
-    public static function create(array $formats = [])
+    public static function create(array $formats = array())
     {
-        $defaults = [
+        $defaults = array(
             new Atom,
             new RSS,
-        ];
+        );
 
         // override default Atom/RSS formats with custom ones
         $formats = array_merge($defaults, $formats);
 
-        // Guzzle HTTP client
-        $http = new Client([
-            'defaults' => [
-                'exceptions' => false,
-                'headers'    => [
-                    'User-Agent' => 'Burgundy/1.0',
-                ],
-            ],
-        ]);
+        $config = array();
+        $namespaces = array();
 
-        $burgundy = new static($http);
+        foreach ($formats as $format) {
+            // register element map and callback
+            $config[$format->getItemRoot()] = array(
+                'map'      => $format->getPropertyMap(),
+                'callback' => function ($data)
+                {
+                    $data['extra']->stories[] = new Story($data['properties']);
+                },
+            );
 
-        return $burgundy->setParser($formats);
+            // register namespaces
+            $namespaces = array_merge($namespaces, $format->getNamespaces());
+        }
+
+        return new static(new XMLEssence($config, $namespaces));
     }
 
     /**
@@ -151,20 +103,6 @@ class Burgundy implements Countable, IteratorAggregate
     }
 
     /**
-     * Return a Story processor
-     *
-     * @access  protected
-     * @return  \Closure
-     */
-    protected function getStoryProcessor()
-    {
-        return function ($data)
-        {
-            $this->stories[] = new Story($data['properties']);
-        };
-    }
-
-    /**
      * Read News Stories
      *
      * @access  public
@@ -173,15 +111,7 @@ class Burgundy implements Countable, IteratorAggregate
      */
     public function read($input)
     {
-        if (filter_var($input, FILTER_VALIDATE_URL) !== false) {
-            $response = $this->http->get($input);
-
-            $input = (string) $response->getBody();
-        }
-
-        $this->essence->extract($input, [
-            'namespaces' => $this->namespaces,
-        ]);
+        $this->essence->extract($input, array(), $this);
     }
 
     /**
@@ -192,6 +122,6 @@ class Burgundy implements Countable, IteratorAggregate
      */
     public function clear()
     {
-        $this->stories = [];
+        $this->stories = array();
     }
 }
