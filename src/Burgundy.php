@@ -16,6 +16,7 @@ use ArrayIterator;
 use Countable;
 use IteratorAggregate;
 
+use Impensavel\Essence\EssenceException;
 use Impensavel\Essence\XMLEssence;
 
 class Burgundy implements Countable, IteratorAggregate
@@ -54,6 +55,7 @@ class Burgundy implements Countable, IteratorAggregate
      * @static
      * @access  public
      * @param   array  $formats Custom feed formats
+     * @throws  RonException
      * @return  Burgundy
      */
     public static function create(array $formats = array())
@@ -83,7 +85,11 @@ class Burgundy implements Countable, IteratorAggregate
             $namespaces = array_merge($namespaces, $format->getNamespaces());
         }
 
-        return new static(new XMLEssence($config, $namespaces));
+        try {
+            return new static(new XMLEssence($config, $namespaces));
+        } catch (EssenceException $e) {
+            throw new RonException($e->getMessage(), $e->getCode(), $e);
+        }
     }
 
     /**
@@ -107,13 +113,18 @@ class Burgundy implements Countable, IteratorAggregate
      *
      * @access  public
      * @param   mixed  $input
+     * @throws  RonException
      * @return  void
      */
     public function read($input)
     {
-        $this->essence->extract($input, array(
-            'options' => LIBXML_PARSEHUGE|LIBXML_DTDLOAD,
-        ), $this);
+        try {
+            $this->essence->extract($input, array(
+                'options' => LIBXML_PARSEHUGE|LIBXML_DTDLOAD,
+            ), $this);
+        } catch (EssenceException $e) {
+            throw new RonException($e->getMessage(), $e->getCode(), $e);
+        }
     }
 
     /**

@@ -12,6 +12,8 @@
 
 namespace Impensavel\Ron;
 
+use Exception;
+
 use Carbon\Carbon;
 
 class Story
@@ -77,20 +79,25 @@ class Story
      *
      * @access  public
      * @param   array  $properties
+     * @throws  RonException
      * @return  Story
      */
     public function __construct(array $properties)
     {
-        foreach ($properties as $property => $value) {
-            if (property_exists($this, $property)) {
-                // create Carbon objects for date properties
-                $isDate = in_array($property, array(
-                    FeedFormatInterface::FEED_PUBLISHED,
-                    FeedFormatInterface::FEED_UPDATED,
-                ));
+        try {
+            foreach ($properties as $property => $value) {
+                if (property_exists($this, $property)) {
+                    // create Carbon objects for date properties
+                    $isDate = in_array($property, array(
+                        FeedFormatInterface::FEED_PUBLISHED,
+                        FeedFormatInterface::FEED_UPDATED,
+                    ));
 
-                $this->$property = $isDate ? new Carbon($value) : $value;
+                    $this->$property = $isDate ? new Carbon($value) : $value;
+                }
             }
+        } catch (Exception $e) {
+            throw new RonException($e->getMessage(), $e->getCode(), $e);
         }
     }
 
