@@ -50,46 +50,110 @@ class Burgundy implements Countable, IteratorAggregate
     }
 
     /**
-     * Create a Burgundy object
+     * Make sure the feed specification has the required structure
      *
      * @static
      * @access  public
-     * @param   array  $formats Custom feed formats
-     * @throws  RonException
-     * @return  Burgundy
+     * @param   array  $spec Feed Specification
+     * @return  array
      */
-    public static function create(array $formats = array())
+    public static function specNormaliser(array $spec)
     {
-        $defaults = array(
-            new Atom,
-            new RSS,
-        );
+        return array_replace_recursive($spec, array(
+            'map'        => array(),
+            'namespaces' => array(),
+        ));
+    }
 
-        // override default Atom/RSS formats with custom ones
-        $formats = array_merge($defaults, $formats);
-
+    /**
+     * Create a XML Essence object
+     *
+     * @static
+     * @access  public
+     * @param   array  $specs Feed specifications
+     * @throws  RonException
+     * @return  XMLEssence
+     */
+    public static function createEssence(array $specs)
+    {
         $config = array();
         $namespaces = array();
 
-        foreach ($formats as $format) {
-            // register element map and callback
-            $config[$format->getItemRoot()] = array(
-                'map'      => $format->getPropertyMap(),
+        foreach ($specs as $xpath => $spec) {
+            $spec = static::specNormaliser($spec);
+
+            // compile element map and callback
+            $config[$xpath] = array(
+                'map'      => $spec['map'],
                 'callback' => function ($data)
                 {
                     $data['extra']->stories[] = new Story($data['properties']);
                 },
             );
 
-            // register namespaces
-            $namespaces = array_merge($namespaces, $format->getNamespaces());
+            // compile namespaces
+            $namespaces = array_merge($namespaces, $spec['namespaces']);
         }
 
         try {
-            return new static(new XMLEssence($config, $namespaces));
+            return new XMLEssence($config, $namespaces);
         } catch (EssenceException $e) {
             throw new RonException($e->getMessage(), $e->getCode(), $e);
         }
+    }
+
+    /**
+     * Create a Burgundy object
+     *
+     * @static
+     * @access  public
+     * @param   array  $specs Extra feed specifications
+     * @throws  RonException
+     * @return  Burgundy
+     */
+    public static function create(array $specs = array())
+    {
+        // default feed specifications
+        $defaults = array(
+            // Atom 0.3 / 1.0
+            'feed/entry' => array(
+                'namespaces' => array(
+                    'a03' => 'http://purl.org/atom/ns#',
+                    'a10' => 'http://www.w3.org/2005/Atom',
+                ),
+                'map'        => array(
+                    Story::ID        => 'string(a03:id|a10:id)',
+                    Story::URL       => 'string(a03:link[@rel="alternate"]/@href|a10:link[@rel="alternate"]/@href)',
+                    Story::TITLE     => 'string(a03:title|a10:title)',
+                    Story::CONTENT   => 'string(a03:content|a10:content)',
+                    Story::AUTHOR    => 'string(a03:author/a03:name|a10:author/a10:name)',
+                    Story::PUBLISHED => 'string(a03:issued|a10:published)',
+                    Story::UPDATED   => 'string(a03:modified|a10:updated)',
+                ),
+            ),
+
+            // RSS 0.9.x / 2.0
+            'rss/channel/item' => array(
+                'namespaces' => array(),
+                'map'        => array(
+                    Story::ID        => 'string(guid)',
+                    Story::URL       => 'string(link)',
+                    Story::TITLE     => 'string(title)',
+                    Story::CONTENT   => 'string(description)',
+                    Story::AUTHOR    => 'string(author)',
+                    Story::PUBLISHED => 'string(pubDate)',
+                    Story::UPDATED   => 'string(pubDate)',
+                ),
+            ),
+        );
+
+        // merge defaults with custom specifications
+        $specs = array_replace_recursive($defaults, $specs);
+
+        // get an XML Essences
+        $essence = static::createEssence($specs);
+
+        return new static($essence);
     }
 
     /**
