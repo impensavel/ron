@@ -19,6 +19,19 @@ use Carbon\Carbon;
 class Story
 {
     /**
+     * Standard Story property names
+     *
+     * @var string
+     */
+    const ID        = 'id';
+    const URL       = 'url';
+    const TITLE     = 'title';
+    const CONTENT   = 'content';
+    const AUTHOR    = 'author';
+    const PUBLISHED = 'published';
+    const UPDATED   = 'updated';
+
+    /**
      * Story ID
      *
      * @access  protected
@@ -87,10 +100,10 @@ class Story
         try {
             foreach ($properties as $property => $value) {
                 if (property_exists($this, $property)) {
-                    // create Carbon objects for date properties
+                    // convert date properties into Carbon objects
                     $isDate = in_array($property, array(
-                        FeedFormatInterface::FEED_PUBLISHED,
-                        FeedFormatInterface::FEED_UPDATED,
+                        self::PUBLISHED,
+                        self::UPDATED,
                     ));
 
                     $this->$property = $isDate ? new Carbon($value) : $value;
@@ -187,13 +200,13 @@ class Story
     public function toArray()
     {
         return array(
-            'id'        => $this->id,
-            'url'       => $this->url,
-            'title'     => $this->title,
-            'content'   => $this->content,
-            'author'    => $this->author,
-            'published' => $this->published,
-            'updated'   => $this->updated,
+            self::ID        => $this->id,
+            self::URL       => $this->url,
+            self::TITLE     => $this->title,
+            self::CONTENT   => $this->content,
+            self::AUTHOR    => $this->author,
+            self::PUBLISHED => $this->published,
+            self::UPDATED   => $this->updated,
         );
     }
 }
