@@ -14,6 +14,7 @@ namespace Impensavel\Ron;
 
 use ArrayIterator;
 use Countable;
+use DOMNodeList;
 use Exception;
 use IteratorAggregate;
 
@@ -78,7 +79,7 @@ class Burgundy implements Countable, IteratorAggregate
     }
 
     /**
-     * Create a XML Essence object
+     * Create an XML Essence object
      *
      * @static
      * @access  public
@@ -99,6 +100,17 @@ class Burgundy implements Countable, IteratorAggregate
                 'map'      => $spec['map'],
                 'callback' => function ($data)
                 {
+                    foreach ($data['properties'] as $property => $value) {
+                        // convert DOMNodeLists into arrays
+                        if ($value instanceof DOMNodeList) {
+                            $data['properties'][$property] = [];
+
+                            foreach ($value as $node) {
+                                $data['properties'][$property][] = $node->nodeValue;
+                            }
+                        }
+                    }
+
                     $data['extra']->stories[] = new Story($data['properties']);
                 },
             ];
@@ -127,11 +139,13 @@ class Burgundy implements Countable, IteratorAggregate
     {
         // default feed specifications
         $defaults = [
-            // Atom 0.3 / 1.0
+            // Atom 0.3 with Dublin Core
+            // Atom 1.0
             'feed/entry' => [
                 'namespaces' => [
                     'a03' => 'http://purl.org/atom/ns#',
                     'a10' => 'http://www.w3.org/2005/Atom',
+                    'dc'  => 'http://purl.org/dc/elements/1.1/',
                 ],
                 'map'        => [
                     Story::ID        => 'string(a03:id|a10:id)',
@@ -139,12 +153,14 @@ class Burgundy implements Countable, IteratorAggregate
                     Story::TITLE     => 'string(a03:title|a10:title)',
                     Story::CONTENT   => 'string(a03:content|a10:content)',
                     Story::AUTHOR    => 'string(a03:author/a03:name|a10:author/a10:name)',
+                    Story::TAGS      => 'dc:subject|a10:category/@term',
                     Story::PUBLISHED => 'string(a03:issued|a10:published)',
                     Story::UPDATED   => 'string(a03:modified|a10:updated)',
                 ],
             ],
 
-            // RSS 0.9.x / 2.0
+            // Rich Site Summary 0.91, 0.92
+            // Really Simple Syndication 2.0
             'rss/channel/item' => [
                 'namespaces' => [],
                 'map'        => [
@@ -153,23 +169,26 @@ class Burgundy implements Countable, IteratorAggregate
                     Story::TITLE     => 'string(title)',
                     Story::CONTENT   => 'string(description)',
                     Story::AUTHOR    => 'string(author)',
+                    Story::TAGS      => 'category',
                     Story::PUBLISHED => 'string(pubDate)',
                     Story::UPDATED   => 'string(pubDate)',
                 ],
             ],
 
-            // RSS 1.0 (RDF based)
+            // RDF Site Summary RSS 0.90, 1.0, 1.1 with Dublin Core
             'rdf:RDF/item' => [
                 'namespaces' => [
-                    'r10' => 'http://purl.org/rss/1.0/',
-                    'dc'  => 'http://purl.org/dc/elements/1.1/',
+                    'r090' => 'http://my.netscape.com/rdf/simple/0.9/',
+                    'r10'  => 'http://purl.org/rss/1.0/',
+                    'dc'   => 'http://purl.org/dc/elements/1.1/',
                 ],
                 'map'        => [
                     Story::ID        => 'string(@rdf:about)',
-                    Story::URL       => 'string(r10:link)',
-                    Story::TITLE     => 'string(r10:title)',
+                    Story::URL       => 'string(r090:link|r10:link)',
+                    Story::TITLE     => 'string(r090:title|r10:title)',
                     Story::CONTENT   => 'string(r10:description)',
                     Story::AUTHOR    => 'string(dc:creator)',
+                    Story::TAGS      => 'dc:subject',
                     Story::PUBLISHED => 'string(dc:date)',
                     Story::UPDATED   => 'string(dc:date)',
                 ],
@@ -179,7 +198,7 @@ class Burgundy implements Countable, IteratorAggregate
         // merge defaults with custom specifications
         $specs = array_replace_recursive($defaults, $specs);
 
-        // get an XML Essences
+        // XML Essence
         $essence = static::createEssence($specs);
 
         // Guzzle HTTP client

@@ -28,6 +28,7 @@ class Story
     const TITLE     = 'title';
     const CONTENT   = 'content';
     const AUTHOR    = 'author';
+    const TAGS      = 'tags';
     const PUBLISHED = 'published';
     const UPDATED   = 'updated';
 
@@ -70,6 +71,14 @@ class Story
      * @var     string
      */
     protected $author;
+
+    /**
+     * Story Tags
+     *
+     * @access  protected
+     * @var     array
+     */
+    protected $tags;
 
     /**
      * Story Published Date
@@ -170,6 +179,17 @@ class Story
     }
 
     /**
+     * Get the Story Tags
+     *
+     * @access  public
+     * @return  array
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    /**
      * Get the Story Published Date
      *
      * @access  public
@@ -205,6 +225,7 @@ class Story
             self::TITLE     => $this->title,
             self::CONTENT   => $this->content,
             self::AUTHOR    => $this->author,
+            self::TAGS      => $this->tags,
             self::PUBLISHED => $this->published,
             self::UPDATED   => $this->updated,
         ];
