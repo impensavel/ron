@@ -145,6 +145,23 @@ class Burgundy implements Countable, IteratorAggregate
                     Story::UPDATED   => 'string(pubDate)',
                 ),
             ),
+
+            // RSS 1.0 (RDF based)
+            'rdf:RDF/item' => array(
+                'namespaces' => array(
+                    'r10' => 'http://purl.org/rss/1.0/',
+                    'dc'  => 'http://purl.org/dc/elements/1.1/',
+                ),
+                'map'        => array(
+                    Story::ID        => 'string(@rdf:about)',
+                    Story::URL       => 'string(r10:link)',
+                    Story::TITLE     => 'string(r10:title)',
+                    Story::CONTENT   => 'string(r10:description)',
+                    Story::AUTHOR    => 'string(dc:creator)',
+                    Story::PUBLISHED => 'string(dc:date)',
+                    Story::UPDATED   => 'string(dc:date)',
+                ),
+            ),
         );
 
         // merge defaults with custom specifications
