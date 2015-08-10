@@ -10,9 +10,10 @@ This library aims for [PSR-1][], [PSR-2][] and [PSR-4][] standards compliance.
 [PSR-4]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md
 
 ## Requirements
-* [PHP](http://www.php.net) 5.3.6+
+* [PHP](http://www.php.net) 5.4+
 * [Essence](https://packagist.org/packages/impensavel/essence)
 * [Carbon](https://packagist.org/packages/nesbot/carbon)
+* [Guzzle](https://packagist.org/packages/guzzlehttp/guzzle)
 
 ## Installation
 ``` bash
