@@ -14,6 +14,7 @@ namespace Impensavel\Ron;
 
 use ArrayIterator;
 use Countable;
+use Exception;
 use IteratorAggregate;
 
 use GuzzleHttp\Client;
@@ -220,17 +221,18 @@ class Burgundy implements Countable, IteratorAggregate
      */
     public function read($input)
     {
-        if (filter_var($input, FILTER_VALIDATE_URL) !== false) {
-            $response = $this->http->get($input);
-
-            $input = (string) $response->getBody();
-        }
-
         try {
+            // fetch the content if the input is a URL
+            if (filter_var($input, FILTER_VALIDATE_URL) !== false) {
+                $response = $this->http->get($input);
+
+                $input = (string) $response->getBody();
+            }
+
             $this->essence->extract($input, [
                 'options' => LIBXML_PARSEHUGE|LIBXML_DTDLOAD,
             ], $this);
-        } catch (EssenceException $e) {
+        } catch (Exception $e) {
             throw new RonException($e->getMessage(), $e->getCode(), $e);
         }
     }
