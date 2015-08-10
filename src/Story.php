@@ -101,10 +101,10 @@ class Story
             foreach ($properties as $property => $value) {
                 if (property_exists($this, $property)) {
                     // convert date properties into Carbon objects
-                    $isDate = in_array($property, array(
+                    $isDate = in_array($property, [
                         self::PUBLISHED,
                         self::UPDATED,
-                    ));
+                    ]);
 
                     $this->$property = $isDate ? new Carbon($value) : $value;
                 }
@@ -199,7 +199,7 @@ class Story
      */
     public function toArray()
     {
-        return array(
+        return [
             self::ID        => $this->id,
             self::URL       => $this->url,
             self::TITLE     => $this->title,
@@ -207,6 +207,6 @@ class Story
             self::AUTHOR    => $this->author,
             self::PUBLISHED => $this->published,
             self::UPDATED   => $this->updated,
-        );
+        ];
     }
 }

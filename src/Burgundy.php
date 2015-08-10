@@ -16,6 +16,7 @@ use ArrayIterator;
 use Countable;
 use IteratorAggregate;
 
+use GuzzleHttp\Client;
 use Impensavel\Essence\EssenceException;
 use Impensavel\Essence\XMLEssence;
 
@@ -30,23 +31,33 @@ class Burgundy implements Countable, IteratorAggregate
     protected $essence;
 
     /**
+     * Guzzle HTTP client
+     *
+     * @access  protected
+     * @var     \GuzzleHttp\Client
+     */
+    protected $http;
+
+    /**
      * News Stories
      *
      * @access  protected
      * @var     array
      */
-    protected $stories = array();
+    protected $stories = [];
 
     /**
      * Burgundy constructor
      *
      * @access  public
-     * @param   XMLEssence $essence XML Essence
+     * @param   XMLEssence         $essence XML Essence
+     * @param   \GuzzleHttp\Client $http    Guzzle HTTP client
      * @return  Burgundy
      */
-    public function __construct(XMLEssence $essence)
+    public function __construct(XMLEssence $essence, Client $http)
     {
         $this->essence = $essence;
+        $this->http = $http;
     }
 
     /**
@@ -59,10 +70,10 @@ class Burgundy implements Countable, IteratorAggregate
      */
     public static function specNormaliser(array $spec)
     {
-        return array_replace_recursive($spec, array(
-            'map'        => array(),
-            'namespaces' => array(),
-        ));
+        return array_replace_recursive($spec, [
+            'map'        => [],
+            'namespaces' => [],
+        ]);
     }
 
     /**
@@ -76,20 +87,20 @@ class Burgundy implements Countable, IteratorAggregate
      */
     public static function createEssence(array $specs)
     {
-        $config = array();
-        $namespaces = array();
+        $config = [];
+        $namespaces = [];
 
         foreach ($specs as $xpath => $spec) {
             $spec = static::specNormaliser($spec);
 
             // compile element map and callback
-            $config[$xpath] = array(
+            $config[$xpath] = [
                 'map'      => $spec['map'],
                 'callback' => function ($data)
                 {
                     $data['extra']->stories[] = new Story($data['properties']);
                 },
-            );
+            ];
 
             // compile namespaces
             $namespaces = array_merge($namespaces, $spec['namespaces']);
@@ -111,17 +122,17 @@ class Burgundy implements Countable, IteratorAggregate
      * @throws  RonException
      * @return  Burgundy
      */
-    public static function create(array $specs = array())
+    public static function create(array $specs = [])
     {
         // default feed specifications
-        $defaults = array(
+        $defaults = [
             // Atom 0.3 / 1.0
-            'feed/entry' => array(
-                'namespaces' => array(
+            'feed/entry' => [
+                'namespaces' => [
                     'a03' => 'http://purl.org/atom/ns#',
                     'a10' => 'http://www.w3.org/2005/Atom',
-                ),
-                'map'        => array(
+                ],
+                'map'        => [
                     Story::ID        => 'string(a03:id|a10:id)',
                     Story::URL       => 'string(a03:link[@rel="alternate"]/@href|a10:link[@rel="alternate"]/@href)',
                     Story::TITLE     => 'string(a03:title|a10:title)',
@@ -129,13 +140,13 @@ class Burgundy implements Countable, IteratorAggregate
                     Story::AUTHOR    => 'string(a03:author/a03:name|a10:author/a10:name)',
                     Story::PUBLISHED => 'string(a03:issued|a10:published)',
                     Story::UPDATED   => 'string(a03:modified|a10:updated)',
-                ),
-            ),
+                ],
+            ],
 
             // RSS 0.9.x / 2.0
-            'rss/channel/item' => array(
-                'namespaces' => array(),
-                'map'        => array(
+            'rss/channel/item' => [
+                'namespaces' => [],
+                'map'        => [
                     Story::ID        => 'string(guid)',
                     Story::URL       => 'string(link)',
                     Story::TITLE     => 'string(title)',
@@ -143,16 +154,16 @@ class Burgundy implements Countable, IteratorAggregate
                     Story::AUTHOR    => 'string(author)',
                     Story::PUBLISHED => 'string(pubDate)',
                     Story::UPDATED   => 'string(pubDate)',
-                ),
-            ),
+                ],
+            ],
 
             // RSS 1.0 (RDF based)
-            'rdf:RDF/item' => array(
-                'namespaces' => array(
+            'rdf:RDF/item' => [
+                'namespaces' => [
                     'r10' => 'http://purl.org/rss/1.0/',
                     'dc'  => 'http://purl.org/dc/elements/1.1/',
-                ),
-                'map'        => array(
+                ],
+                'map'        => [
                     Story::ID        => 'string(@rdf:about)',
                     Story::URL       => 'string(r10:link)',
                     Story::TITLE     => 'string(r10:title)',
@@ -160,9 +171,9 @@ class Burgundy implements Countable, IteratorAggregate
                     Story::AUTHOR    => 'string(dc:creator)',
                     Story::PUBLISHED => 'string(dc:date)',
                     Story::UPDATED   => 'string(dc:date)',
-                ),
-            ),
-        );
+                ],
+            ],
+        ];
 
         // merge defaults with custom specifications
         $specs = array_replace_recursive($defaults, $specs);
@@ -170,7 +181,17 @@ class Burgundy implements Countable, IteratorAggregate
         // get an XML Essences
         $essence = static::createEssence($specs);
 
-        return new static($essence);
+        // Guzzle HTTP client
+        $http = new Client([
+            'defaults' => [
+                'exceptions' => false,
+                'headers'    => [
+                    'User-Agent' => 'Burgundy/1.0',
+                ],
+            ],
+        ]);
+
+        return new static($essence, $http);
     }
 
     /**
@@ -199,10 +220,16 @@ class Burgundy implements Countable, IteratorAggregate
      */
     public function read($input)
     {
+        if (filter_var($input, FILTER_VALIDATE_URL) !== false) {
+            $response = $this->http->get($input);
+
+            $input = (string) $response->getBody();
+        }
+
         try {
-            $this->essence->extract($input, array(
+            $this->essence->extract($input, [
                 'options' => LIBXML_PARSEHUGE|LIBXML_DTDLOAD,
-            ), $this);
+            ], $this);
         } catch (EssenceException $e) {
             throw new RonException($e->getMessage(), $e->getCode(), $e);
         }
@@ -216,6 +243,6 @@ class Burgundy implements Countable, IteratorAggregate
      */
     public function clear()
     {
-        $this->stories = array();
+        $this->stories = [];
     }
 }
