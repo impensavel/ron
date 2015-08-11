@@ -20,5 +20,33 @@ This library aims for [PSR-1][], [PSR-2][] and [PSR-4][] standards compliance.
 composer require "impensavel/ron:dev-master"
 ```
 
+## Usage example
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+use Impensavel\Ron\Burgundy;
+use Impensavel\Ron\RonException;
+
+try
+{
+    $burgundy = Burgundy::create();
+
+    // read available news stories from an input source
+    $burgundy->read('http://feeds.bbci.co.uk/news/technology/rss.xml');
+    
+    // traverse through each news story
+    foreach ($burgundy as $story) {
+        var_dump($story->toArray());
+    }
+
+    // clear existing news stories
+    $burgundy->clear();
+
+} catch (RonException $e) {
+    // handle exceptions
+}
+```
 ## License
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
