@@ -2,7 +2,18 @@
   "name": "impensavel/ron",
   "type": "library",
   "description": "Ron is a PHP RSS/Atom News Reader Library and it stands for Read Off News",
-  "keywords": ["atom", "rss", "feed", "news", "reader", "ron", "burgundy", "syndication", "xml"],
+  "keywords": [
+    "atom",
+    "rss",
+    "feed",
+    "rdf",
+    "news",
+    "reader",
+    "ron",
+    "burgundy",
+    "syndication",
+    "xml"
+  ],
   "homepage": "https://github.com/impensavel/ron",
   "license": "MIT",
   "authors": [
