@@ -12,17 +12,14 @@
 
 namespace Impensavel\Ron;
 
-use ArrayIterator;
-use Countable;
 use DOMNodeList;
 use Exception;
-use IteratorAggregate;
 
 use GuzzleHttp\Client;
 use Impensavel\Essence\EssenceException;
 use Impensavel\Essence\XMLEssence;
 
-class Burgundy implements Countable, IteratorAggregate
+class Burgundy
 {
     /**
      * XML Essence
@@ -41,14 +38,6 @@ class Burgundy implements Countable, IteratorAggregate
     protected $http;
 
     /**
-     * News Stories
-     *
-     * @access  protected
-     * @var     array
-     */
-    protected $stories = [];
-
-    /**
      * Burgundy constructor
      *
      * @access  public
@@ -63,14 +52,14 @@ class Burgundy implements Countable, IteratorAggregate
     }
 
     /**
-     * Make sure the feed specification has the required structure
+     * Normalise Feed Specification
      *
      * @static
      * @access  public
      * @param   array  $spec Feed Specification
      * @return  array
      */
-    public static function specNormaliser(array $spec)
+    public static function normalise(array $spec)
     {
         return array_replace_recursive($spec, [
             'map'        => [],
@@ -87,31 +76,31 @@ class Burgundy implements Countable, IteratorAggregate
      * @throws  RonException
      * @return  XMLEssence
      */
-    public static function createEssence(array $specs)
+    public static function essentialise(array $specs)
     {
         $config = [];
         $namespaces = [];
 
         foreach ($specs as $xpath => $spec) {
-            $spec = static::specNormaliser($spec);
+            $spec = static::normalise($spec);
 
-            // compile element map and callback
+            // compile element map and data handler
             $config[$xpath] = [
-                'map'      => $spec['map'],
-                'callback' => function ($data)
+                'map'     => $spec['map'],
+                'handler' => function ($element, array $properties, &$stories)
                 {
-                    foreach ($data['properties'] as $property => $value) {
+                    foreach ($properties as $name => $value) {
                         // convert DOMNodeLists into arrays
                         if ($value instanceof DOMNodeList) {
-                            $data['properties'][$property] = [];
+                            $properties[$name] = [];
 
                             foreach ($value as $node) {
-                                $data['properties'][$property][] = $node->nodeValue;
+                                $properties[$name][] = $node->nodeValue;
                             }
                         }
                     }
 
-                    $data['extra']->stories[] = new Story($data['properties']);
+                    $stories[] = new Story($properties);
                 },
             ];
 
@@ -139,7 +128,7 @@ class Burgundy implements Countable, IteratorAggregate
     {
         // default feed specifications
         $defaults = [
-            // Atom 0.3 with Dublin Core
+            // Atom 0.3 + Dublin Core
             // Atom 1.0
             'feed/entry' => [
                 'namespaces' => [
@@ -175,7 +164,7 @@ class Burgundy implements Countable, IteratorAggregate
                 ],
             ],
 
-            // RDF Site Summary RSS 0.90, 1.0, 1.1 with Dublin Core
+            // RDF Site Summary 0.90, 1.0, 1.1 + Dublin Core
             'rdf:RDF/item' => [
                 'namespaces' => [
                     'r090' => 'http://my.netscape.com/rdf/simple/0.9/',
@@ -199,7 +188,7 @@ class Burgundy implements Countable, IteratorAggregate
         $specs = array_replace_recursive($defaults, $specs);
 
         // XML Essence
-        $essence = static::createEssence($specs);
+        $essence = static::essentialise($specs);
 
         // Guzzle HTTP client
         $http = new Client([
@@ -215,32 +204,18 @@ class Burgundy implements Countable, IteratorAggregate
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public function count()
-    {
-        return count($this->stories);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getIterator()
-    {
-        return new ArrayIterator($this->stories);
-    }
-
-    /**
      * Read News Stories
      *
      * @access  public
      * @param   mixed  $input
      * @throws  RonException
-     * @return  void
+     * @return  array
      */
     public function read($input)
     {
         try {
+            $stories = [];
+
             // fetch the content if the input is a URL
             if (filter_var($input, FILTER_VALIDATE_URL) !== false) {
                 $response = $this->http->get($input);
@@ -249,21 +224,13 @@ class Burgundy implements Countable, IteratorAggregate
             }
 
             $this->essence->extract($input, [
-                'options' => LIBXML_PARSEHUGE|LIBXML_DTDLOAD,
-            ], $this);
+                'options' => LIBXML_PARSEHUGE|LIBXML_DTDLOAD|LIBXML_NSCLEAN,
+            ], $stories);
+
+            return $stories;
+
         } catch (Exception $e) {
             throw new RonException($e->getMessage(), $e->getCode(), $e);
         }
-    }
-
-    /**
-     * Clear News Stories
-     *
-     * @access  public
-     * @return  void
-     */
-    public function clear()
-    {
-        $this->stories = [];
     }
 }
