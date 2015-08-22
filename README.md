@@ -34,19 +34,20 @@ try
     $burgundy = Burgundy::create();
 
     // read available news stories from an input source
-    $burgundy->read('http://feeds.bbci.co.uk/news/technology/rss.xml');
+    $stories = $burgundy->read('http://feeds.bbci.co.uk/news/technology/rss.xml');
     
     // traverse through each news story
-    foreach ($burgundy as $story) {
+    foreach ($stories as $story) {
         var_dump($story->toArray());
     }
-
-    // clear existing news stories
-    $burgundy->clear();
 
 } catch (RonException $e) {
     // handle exceptions
 }
 ```
+
+## Class documentation
+- [Burgundy](docs/Burgundy.md)
+
 ## License
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
