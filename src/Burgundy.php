@@ -208,11 +208,16 @@ class Burgundy
      *
      * @access  public
      * @param   mixed  $input
+     * @param   array  $options
      * @throws  RonException
      * @return  array
      */
-    public function read($input)
+    public function read($input, array $options = [])
     {
+        $options = array_replace_recursive([
+            'options'  => LIBXML_PARSEHUGE|LIBXML_DTDLOAD|LIBXML_NSCLEAN,
+        ], $options);
+
         try {
             $stories = [];
 
@@ -223,9 +228,7 @@ class Burgundy
                 $input = (string) $response->getBody();
             }
 
-            $this->essence->extract($input, [
-                'options' => LIBXML_PARSEHUGE|LIBXML_DTDLOAD|LIBXML_NSCLEAN,
-            ], $stories);
+            $this->essence->extract($input, $options, $stories);
 
             return $stories;
 
