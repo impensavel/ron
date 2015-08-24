@@ -55,11 +55,11 @@ class Burgundy
      * Normalise Feed Specification
      *
      * @static
-     * @access  public
+     * @access  protected
      * @param   array  $spec Feed Specification
      * @return  array
      */
-    public static function normalise(array $spec)
+    protected static function normalise(array $spec)
     {
         return array_replace_recursive($spec, [
             'map'        => [],
@@ -71,12 +71,12 @@ class Burgundy
      * Create an XML Essence object
      *
      * @static
-     * @access  public
+     * @access  protected
      * @param   array  $specs Feed specifications
      * @throws  RonException
      * @return  XMLEssence
      */
-    public static function essentialise(array $specs)
+    protected static function essentialise(array $specs)
     {
         $config = [];
         $namespaces = [];
