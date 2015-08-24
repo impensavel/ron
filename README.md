@@ -46,6 +46,7 @@ try
 
 ## Class documentation
 - [Burgundy](docs/Burgundy.md)
+- [Story](docs/Story.md)
 
 ## License
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
