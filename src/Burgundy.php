@@ -120,85 +120,37 @@ class Burgundy
      *
      * @static
      * @access  public
-     * @param   array  $specs Extra feed specifications
+     * @param   array  $config Configurations
      * @throws  RonException
      * @return  Burgundy
      */
-    public static function create(array $specs = [])
+    public static function create(array $config = [])
     {
-        // default feed specifications
-        $defaults = [
-            // Atom 0.3 + Dublin Core
-            // Atom 1.0
-            'feed/entry' => [
-                'namespaces' => [
-                    'a03' => 'http://purl.org/atom/ns#',
-                    'a10' => 'http://www.w3.org/2005/Atom',
-                    'dc'  => 'http://purl.org/dc/elements/1.1/',
-                ],
-                'map'        => [
-                    Story::ID        => 'string(a03:id|a10:id)',
-                    Story::URL       => 'string(a03:link[@rel="alternate"]/@href|a10:link[@rel="alternate"]/@href)',
-                    Story::TITLE     => 'string(a03:title|a10:title)',
-                    Story::CONTENT   => 'string(a03:content|a10:content)',
-                    Story::AUTHOR    => 'string(a03:author/a03:name|a10:author/a10:name)',
-                    Story::TAGS      => 'dc:subject|a10:category/@term',
-                    Story::PUBLISHED => 'string(a03:issued|a10:published)',
-                    Story::UPDATED   => 'string(a03:modified|a10:updated)',
+        // configuration defaults
+        $config = array_replace_recursive([
+            'specs'     => [
+                'feed/entry'       => require 'specs/Atom.php',
+                'rss/channel/item' => require 'specs/RSS.php',
+                'rdf:RDF/item'     => require 'specs/RDF.php',
+            ],
+            'http'      => [
+                'defaults' => [
+                    'headers' => [
+                        'User-Agent' => 'Burgundy/1.0',
+                    ],
                 ],
             ],
-
-            // Rich Site Summary 0.91, 0.92
-            // Really Simple Syndication 2.0
-            'rss/channel/item' => [
-                'namespaces' => [],
-                'map'        => [
-                    Story::ID        => 'string(guid)',
-                    Story::URL       => 'string(link)',
-                    Story::TITLE     => 'string(title)',
-                    Story::CONTENT   => 'string(description)',
-                    Story::AUTHOR    => 'string(author)',
-                    Story::TAGS      => 'category',
-                    Story::PUBLISHED => 'string(pubDate)',
-                    Story::UPDATED   => 'string(pubDate)',
-                ],
-            ],
-
-            // RDF Site Summary 0.90, 1.0, 1.1 + Dublin Core
-            'rdf:RDF/item' => [
-                'namespaces' => [
-                    'r090' => 'http://my.netscape.com/rdf/simple/0.9/',
-                    'r10'  => 'http://purl.org/rss/1.0/',
-                    'dc'   => 'http://purl.org/dc/elements/1.1/',
-                ],
-                'map'        => [
-                    Story::ID        => 'string(@rdf:about)',
-                    Story::URL       => 'string(r090:link|r10:link)',
-                    Story::TITLE     => 'string(r090:title|r10:title)',
-                    Story::CONTENT   => 'string(r10:description)',
-                    Story::AUTHOR    => 'string(dc:creator)',
-                    Story::TAGS      => 'dc:subject',
-                    Story::PUBLISHED => 'string(dc:date)',
-                    Story::UPDATED   => 'string(dc:date)',
-                ],
-            ],
-        ];
-
-        // merge defaults with custom specifications
-        $specs = array_replace_recursive($defaults, $specs);
-
-        // XML Essence
-        $essence = static::essentialise($specs);
-
-        // Guzzle HTTP client
-        $http = new Client([
-            'defaults' => [
-                'exceptions' => false,
-                'headers'    => [
-                    'User-Agent' => 'Burgundy/1.0',
+        ], $config, [
+            'http' => [
+                'defaults' => [
+                    'exceptions' => false,
                 ],
             ],
         ]);
+
+        $essence = static::essentialise($config['specs']);
+
+        $http = new Client($config['http']);
 
         return new static($essence, $http);
     }
