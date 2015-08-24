@@ -1,7 +1,7 @@
 {
   "name": "impensavel/ron",
   "type": "library",
-  "description": "Ron is a PHP RSS/Atom News Reader Library and it stands for Read Off News",
+  "description": "Read Off News is a PHP RSS/Atom News Reader Library",
   "keywords": [
     "atom",
     "rss",

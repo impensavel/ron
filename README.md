@@ -1,7 +1,7 @@
 # Ron
 [![Latest Stable Version](https://poser.pugx.org/impensavel/ron/v/stable)](https://packagist.org/packages/impensavel/ron)
 
-Ron is a PHP RSS/Atom News Reader Library and it stands for **Read Off News**.
+**Read Off News** is a PHP RSS/Atom News Reader Library.
 
 This library aims for [PSR-1][], [PSR-2][] and [PSR-4][] standards compliance.
 
@@ -17,7 +17,7 @@ This library aims for [PSR-1][], [PSR-2][] and [PSR-4][] standards compliance.
 
 ## Installation
 ``` bash
-composer require "impensavel/ron:dev-master"
+composer require "impensavel/ron"
 ```
 
 ## Usage example
@@ -33,10 +33,8 @@ try
 {
     $burgundy = Burgundy::create();
 
-    // read available news stories from an input source
     $stories = $burgundy->read('http://feeds.bbci.co.uk/news/technology/rss.xml');
     
-    // traverse through each news story
     foreach ($stories as $story) {
         var_dump($story->toArray());
     }
