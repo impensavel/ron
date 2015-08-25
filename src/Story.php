@@ -19,7 +19,7 @@ use Carbon\Carbon;
 class Story
 {
     /**
-     * Standard Story property names
+     * Story property names
      *
      * @var string
      */
@@ -31,9 +31,10 @@ class Story
     const TAGS      = 'tags';
     const PUBLISHED = 'published';
     const UPDATED   = 'updated';
+    const EXTRA     = 'extra';
 
     /**
-     * Story ID
+     * ID
      *
      * @access  protected
      * @var     string
@@ -41,7 +42,7 @@ class Story
     protected $id;
 
     /**
-     * Story URL
+     * Url
      *
      * @access  protected
      * @var     string
@@ -49,7 +50,7 @@ class Story
     protected $url;
 
     /**
-     * Story Title
+     * Title
      *
      * @access  protected
      * @var     string
@@ -57,7 +58,7 @@ class Story
     protected $title;
 
     /**
-     * Story Content
+     * Content
      *
      * @access  protected
      * @var     string
@@ -65,7 +66,7 @@ class Story
     protected $content;
 
     /**
-     * Story Author
+     * Author
      *
      * @access  protected
      * @var     string
@@ -73,7 +74,7 @@ class Story
     protected $author;
 
     /**
-     * Story Tags
+     * Tags
      *
      * @access  protected
      * @var     array
@@ -81,7 +82,7 @@ class Story
     protected $tags;
 
     /**
-     * Story Published Date
+     * Published Date
      *
      * @access  protected
      * @var     Carbon
@@ -89,12 +90,20 @@ class Story
     protected $published;
 
     /**
-     * Story Updated Date
+     * Updated Date
      *
      * @access  protected
      * @var     Carbon
      */
     protected $updated;
+
+    /**
+     * Extra properties
+     *
+     * @access  protected
+     * @var     array
+     */
+    protected $extra = [];
 
     /**
      * Story constructor
@@ -108,14 +117,13 @@ class Story
     {
         try {
             foreach ($properties as $property => $value) {
-                if (property_exists($this, $property)) {
-                    // convert date properties into Carbon objects
-                    $isDate = in_array($property, [
-                        self::PUBLISHED,
-                        self::UPDATED,
-                    ]);
+                // test the property value for a date format
+                $isDate = is_string($value) && (strtotime($value) !== false);
 
+                if (property_exists($this, $property)) {
                     $this->$property = $isDate ? new Carbon($value) : $value;
+                } else {
+                    $this->extra[$property] = $isDate ? new Carbon($value) : $value;
                 }
             }
         } catch (Exception $e) {
@@ -124,7 +132,7 @@ class Story
     }
 
     /**
-     * Get the Story ID
+     * Get the ID
      *
      * @access  public
      * @return  string
@@ -135,7 +143,7 @@ class Story
     }
 
     /**
-     * Get the Story URL
+     * Get the Url
      *
      * @access  public
      * @return  string
@@ -146,7 +154,7 @@ class Story
     }
 
     /**
-     * Get the Story Title
+     * Get the Title
      *
      * @access  public
      * @return  string
@@ -157,7 +165,7 @@ class Story
     }
 
     /**
-     * Get the Story Content
+     * Get the Content
      *
      * @access  public
      * @return  string
@@ -168,7 +176,7 @@ class Story
     }
 
     /**
-     * Get the Story Author
+     * Get the Author
      *
      * @access  public
      * @return  string
@@ -179,7 +187,7 @@ class Story
     }
 
     /**
-     * Get the Story Tags
+     * Get the Tags
      *
      * @access  public
      * @return  array
@@ -190,7 +198,7 @@ class Story
     }
 
     /**
-     * Get the Story Published Date
+     * Get the Published Date
      *
      * @access  public
      * @return  Carbon
@@ -201,7 +209,7 @@ class Story
     }
 
     /**
-     * Get the Story Updated Date
+     * Get the Updated Date
      *
      * @access  public
      * @return  Carbon
@@ -209,6 +217,27 @@ class Story
     public function getUpdated()
     {
         return $this->updated;
+    }
+
+    /**
+     * Get Extra properties
+     *
+     * @access  public
+     * @param   string $property Extra property name
+     * @throws  RonException
+     * @return  mixed
+     */
+    public function getExtra($property = null)
+    {
+        if ($property === null) {
+            return $this->extra;
+        }
+
+        if (array_key_exists($property, $this->extra)) {
+            return $this->extra[$property];
+        }
+
+        throw new RonException('Invalid property: '.$property);
     }
 
     /**
@@ -228,6 +257,7 @@ class Story
             self::TAGS      => $this->tags,
             self::PUBLISHED => $this->published,
             self::UPDATED   => $this->updated,
+            self::EXTRA     => $this->extra,
         ];
     }
 }

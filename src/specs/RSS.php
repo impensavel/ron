@@ -3,7 +3,7 @@
 use Impensavel\Ron\Story;
 
 /**
- * Rich Site Summary 0.91, 0.92
+ * Rich Site Summary 0.91/0.92
  * Really Simple Syndication 2.0
  *
  * Element: rss/channel/item
