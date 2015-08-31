@@ -90,13 +90,8 @@ class Burgundy
                 'handler' => function ($element, array $properties, &$stories)
                 {
                     foreach ($properties as $name => $value) {
-                        // convert DOMNodeLists into arrays
                         if ($value instanceof DOMNodeList) {
-                            $properties[$name] = [];
-
-                            foreach ($value as $node) {
-                                $properties[$name][] = $node->nodeValue;
-                            }
+                            $properties[$name] = XMLEssence::DOMNodeListToArray($value);
                         }
                     }
 
