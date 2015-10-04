@@ -123,12 +123,12 @@ class Burgundy
     {
         // configuration defaults
         $config = array_replace_recursive([
-            'specs'     => [
+            'specs' => [
                 'feed/entry'       => require 'specs/Atom.php',
                 'rss/channel/item' => require 'specs/RSS.php',
                 'rdf:RDF/item'     => require 'specs/RDF.php',
             ],
-            'http'      => [
+            'http'  => [
                 'defaults' => [
                     'headers' => [
                         'User-Agent' => 'Burgundy/1.0',
@@ -178,7 +178,6 @@ class Burgundy
             $this->essence->extract($input, $options, $stories);
 
             return $stories;
-
         } catch (Exception $e) {
             throw new RonException($e->getMessage(), $e->getCode(), $e);
         }

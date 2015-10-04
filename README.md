@@ -3,9 +3,8 @@
 
 **Read Off News** is a PHP RSS/Atom News Reader Library.
 
-This library aims for [PSR-1][], [PSR-2][] and [PSR-4][] standards compliance.
+This library aims for [PSR-2][] and [PSR-4][] standards compliance.
 
-[PSR-1]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md
 [PSR-2]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md
 [PSR-4]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md
 
