@@ -26,6 +26,6 @@ class RonException extends RuntimeException
     {
         $previous = $this->getPrevious();
 
-        return $previous ? null : $previous->getMessage();
+        return $previous ? $previous->getMessage() : null;
     }
 }
