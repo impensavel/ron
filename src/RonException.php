@@ -3,7 +3,7 @@
  * This file is part of the Ron library.
  *
  * @author     Quetzy Garcia <quetzyg@impensavel.com>
- * @copyright  2015
+ * @copyright  2015-2016
  *
  * For the full copyright and license information,
  * please view the LICENSE.md file that was distributed
