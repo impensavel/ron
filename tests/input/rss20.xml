@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="http://rss.cnn.com/assets/rss.xsl"?>
+<rss xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
+    <channel>
+        <title>CNN.com - Technology</title>
+        <link>http://www.cnn.com/TECH/index.html?eref=rss_tech</link>
+        <description>CNN.com delivers up-to-the-minute news and information on the latest top stories, weather, entertainment, politics and more.</description>
+        <language>en-US</language>
+        <copyright>Copyright 2016 Cable News Network LP, LLLP.</copyright>
+        <pubDate>Tue, 07 Jun 2016 14:24:05 EDT</pubDate>
+        <ttl>10</ttl>
+        <image>
+            <title>CNN.com - Technology</title>
+            <link>http://www.cnn.com/TECH/index.html?eref=rss_tech</link>
+            <url>http://i.cdn.turner.com/cnn/.e/img/1.0/logo/cnn.logo.rss.gif</url>
+            <width>144</width>
+            <height>33</height>
+            <description>CNN.com delivers up-to-the-minute news and information on the latest top stories, weather, entertainment, politics and more.</description>
+        </image>
+        <item>
+            <title>20 planes every aviation fan should experience</title>
+            <guid>http://www.cnn.com/2016/06/06/aviation/20-iconic-planes-for-aviation-fans/index.html</guid>
+            <link>http://rss.cnn.com/r/66bd6a36da/0L0Scnn0Bcom0C20A160C0A60C0A60Caviation0C20A0Eiconic0Eplanes0Efor0Eaviation0Efans0Cindex0Bhtml0Deref0Frss0Itech</link>
+            <description>We&apos;re flying more than ever. &lt;Br&gt;&lt;Br&gt;&lt;a href=&quot;http://podcast.cnn.com&quot; rel=&quot;nofollow&quot;&gt;&lt;img src=&quot;http://podcasts.cnn.net/cnnpodcasts/feeds/images/300-ac360.jpg&quot;&gt;&lt;/a&gt;</description>
+            <pubDate>Tue, 07 Jun 2016 13:56:57 EDT</pubDate>
+            <media:thumbnail height="51" width="90" url="http://i2.cdn.turner.com/cnn/dam/assets/160605231336-antonov-an-74-top-tease.jpg"/>
+            <media:content height="51" width="90" medium="image" type="image/jpeg" url="http://i2.cdn.turner.com/cnn/dam/assets/160605231336-antonov-an-74-top-tease.jpg"/>
+        </item>
+        <item>
+            <title>Fish can recognize human faces, study shows</title>
+            <guid>http://www.cnn.com/2016/06/07/health/fish-human-face-recognition-study-trnd/index.html</guid>
+            <link>http://rss.cnn.com/r/66bd6a36da/0L0Scnn0Bcom0C20A160C0A60C0A70Chealth0Cfish0Ehuman0Eface0Erecognition0Estudy0Etrnd0Cindex0Bhtml0Deref0Frss0Itech</link>
+            <description>Can your pet fish recognize your face?</description>
+            <pubDate>Tue, 07 Jun 2016 14:08:51 EDT</pubDate>
+            <media:thumbnail height="51" width="90" url="http://i2.cdn.turner.com/cnn/dam/assets/160606131854-archerfish-can-recognize-human-faces-top-tease.jpg"/>
+            <media:content height="51" width="90" medium="image" type="image/jpeg" url="http://i2.cdn.turner.com/cnn/dam/assets/160606131854-archerfish-can-recognize-human-faces-top-tease.jpg"/>
+        </item>
+        <item>
+            <title>Girls learn science in defiance of Boko Haram</title>
+            <guid>http://www.cnn.com/2016/06/07/tech/girls-coding-uzochukwu-nigeria/index.html</guid>
+            <link>http://rss.cnn.com/r/66bd6a36da/0L0Scnn0Bcom0C20A160C0A60C0A70Ctech0Cgirls0Ecoding0Euzochukwu0Enigeria0Cindex0Bhtml0Deref0Frss0Itech</link>
+            <description>A female electronics engineer in Nigeria is defying Boko Haram in the region, by encouraging girls to pursue careers in science and technology. &lt;br&gt;&lt;Br&gt;Sponsored:&lt;br&gt; &lt;b&gt;Drivers With No Tickets In 3 Years Read This&lt;/b&gt; &lt;br&gt; &lt;a href=&quot;http://www.dailyconsumerlife.com/articles/auto/?t202id=5141&amp;t202kw=&quot; target=&quot;_blank&quot;&gt;Do NOT pay your next car insurance bill until you try this.&lt;/a&gt; &lt;Br&gt;&lt;Br&gt;</description>
+            <pubDate>Tue, 07 Jun 2016 13:43:09 EDT</pubDate>
+            <media:thumbnail height="51" width="90" url="http://i2.cdn.turner.com/cnn/dam/assets/160531103826-girls-coding-top-tease.jpg"/>
+            <media:content height="51" width="90" medium="image" type="image/jpeg" url="http://i2.cdn.turner.com/cnn/dam/assets/160531103826-girls-coding-top-tease.jpg"/>
+        </item>
+        <item>
+            <title>We may soon finally know what a black hole actually looks like</title>
+            <guid>http://www.cnn.com/2016/06/07/world/black-hole-event-horizon-telescope/index.html</guid>
+            <link>http://rss.cnn.com/r/66bd6a36da/0L0Scnn0Bcom0C20A160C0A60C0A70Cworld0Cblack0Ehole0Eevent0Ehorizon0Etelescope0Cindex0Bhtml0Deref0Frss0Itech</link>
+            <description>Despite what Christopher Nolan&apos;s &quot;Interstellar&quot; and fancy NASA visualizations may have led you to believe, we&apos;ve never actually seen a black hole. </description>
+            <pubDate>Tue, 07 Jun 2016 13:44:18 EDT</pubDate>
+            <media:thumbnail height="51" width="90" url="http://i2.cdn.turner.com/cnn/dam/assets/160106145458-black-hole-gallery-9-top-tease.jpg"/>
+            <media:content height="51" width="90" medium="image" type="image/jpeg" url="http://i2.cdn.turner.com/cnn/dam/assets/160106145458-black-hole-gallery-9-top-tease.jpg"/>
+        </item>
+        <item>
+            <title>Meteor streaks across Arizona sky</title>
+            <guid>http://www.cnn.com/2016/06/02/us/arizona-possible-meteor-irpt/index.html</guid>
+            <link>http://rss.cnn.com/r/66bd6a36da/0L0Scnn0Bcom0C20A160C0A60C0A20Cus0Carizona0Epossible0Emeteor0Eirpt0Cindex0Bhtml0Deref0Frss0Itech</link>
+            <description>Yes, Phoenix, that was a meteor.&lt;Br&gt;&lt;Br&gt;&lt;a href=&quot;http://podcast.cnn.com&quot; rel=&quot;nofollow&quot;&gt;&lt;img src=&quot;http://podcasts.cnn.net/cnnpodcasts/feeds/images/300-amanpour.jpg&quot;&gt;&lt;/a&gt;</description>
+            <pubDate>Tue, 07 Jun 2016 13:46:28 EDT</pubDate>
+            <media:thumbnail height="51" width="90" url="http://i2.cdn.turner.com/cnn/dam/assets/160602104308-arizona-possible-meteorite-top-tease.jpg"/>
+            <media:content height="51" width="90" medium="image" type="image/jpeg" url="http://i2.cdn.turner.com/cnn/dam/assets/160602104308-arizona-possible-meteorite-top-tease.jpg"/>
+        </item>
+    </channel>
+</rss>
