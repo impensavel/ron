@@ -1,4 +1,14 @@
 <?php
+/**
+ * This file is part of the Ron library.
+ *
+ * @author     Quetzy Garcia <quetzyg@impensavel.com>
+ * @copyright  2015-2016
+ *
+ * For the full copyright and license information,
+ * please view the LICENSE.md file that was distributed
+ * with this source code.
+ */
 
 use Impensavel\Ron\Story;
 
@@ -9,6 +19,7 @@ use Impensavel\Ron\Story;
  * Element: feed/entry
  */
 return [
+    'name'       => 'Atom',
     'namespaces' => [
         'a03' => 'http://purl.org/atom/ns#',
         'a10' => 'http://www.w3.org/2005/Atom',
