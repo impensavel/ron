@@ -3,7 +3,7 @@
  * This file is part of the Ron library.
  *
  * @author     Quetzy Garcia <quetzyg@impensavel.com>
- * @copyright  2015
+ * @copyright  2015-2016
  *
  * For the full copyright and license information,
  * please view the LICENSE.md file that was distributed
@@ -31,7 +31,14 @@ class Story
     const TAGS      = 'tags';
     const PUBLISHED = 'published';
     const UPDATED   = 'updated';
-    const EXTRA     = 'extra';
+
+    /**
+     * Specification
+     *
+     * @access  protected
+     * @var     string
+     */
+    protected $spec;
 
     /**
      * ID
@@ -109,15 +116,18 @@ class Story
      * Story constructor
      *
      * @access  public
+     * @param   string $spec
      * @param   array  $properties
      * @throws  RonException
      * @return  Story
      */
-    public function __construct(array $properties)
+    public function __construct($spec, array $properties)
     {
         try {
+            $this->spec = $spec;
+
             foreach ($properties as $property => $value) {
-                // test the property value for a date format
+                // Test the property value for a date format
                 $isDate = is_string($value) && (strtotime($value) !== false);
 
                 if (property_exists($this, $property)) {
@@ -129,6 +139,17 @@ class Story
         } catch (Exception $e) {
             throw new RonException($e->getMessage(), $e->getCode(), $e);
         }
+    }
+
+    /**
+     * Get the Specification
+     *
+     * @access  public
+     * @return  string
+     */
+    public function getSpec()
+    {
+        return $this->spec;
     }
 
     /**
@@ -257,7 +278,6 @@ class Story
             self::TAGS      => $this->tags,
             self::PUBLISHED => $this->published,
             self::UPDATED   => $this->updated,
-            self::EXTRA     => $this->extra,
         ];
     }
 }
