@@ -9,15 +9,22 @@ This library aims for [PSR-2][] and [PSR-4][] standards compliance.
 [PSR-4]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md
 
 ## Requirements
-* [PHP](http://www.php.net) 5.4+
+* [PHP](http://www.php.net) 5.5+
 * [Essence](https://packagist.org/packages/impensavel/essence)
 * [Carbon](https://packagist.org/packages/nesbot/carbon)
-* [Guzzle](https://packagist.org/packages/guzzlehttp/guzzle)
+
+## Optional requirements
+In order to parse news feeds from a URL, the following packages are needed:
+* [HTTP Message related tools](https://packagist.org/packages/php-http/message)
+* A package that provides [php-http/client-implementation](https://packagist.org/providers/php-http/client-implementation)
 
 ## Installation
 ``` bash
 composer require "impensavel/ron"
+composer require "php-http/guzzle6-adapter"
 ```
+>**TIP:** This library isn't coupled to a specific HTTP client! Read the **Burgundy** [documentation](docs/Burgundy.md) for more information.
+
 
 ## Usage example
 ```php
@@ -25,12 +32,18 @@ composer require "impensavel/ron"
 
 require 'vendor/autoload.php';
 
+use Http\Adapter\Guzzle6\Client as HttpClient;
+use Http\Message\MessageFactory\GuzzleMessageFactory as MessageFactory;
+
 use Impensavel\Ron\Burgundy;
 use Impensavel\Ron\RonException;
 
 try
 {
-    $burgundy = Burgundy::create();
+    $client = new HttpClient;
+    $message = new MessageFactory;
+
+    $burgundy = Burgundy::create($client, $message);
 
     $stories = $burgundy->read('http://feeds.bbci.co.uk/news/technology/rss.xml');
     
@@ -39,7 +52,7 @@ try
     }
 
 } catch (RonException $e) {
-    // handle exceptions
+    // Handle exceptions
 }
 ```
 
