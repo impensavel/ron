@@ -1,0 +1,94 @@
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=ISO-8859-1
+ETag: QgkL2OY4cnEOTMpdpEqEn0Z5Lf8
+Last-Modified: Tue, 07 Jun 2016 23:49:01 GMT
+Transfer-Encoding: chunked
+Date: Tue, 07 Jun 2016 23:57:21 GMT
+Expires: Tue, 07 Jun 2016 23:57:21 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Server: GSE
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://my.netscape.com/rdf/simple/0.9/">
+    <channel>
+        <title>Slashdot</title>
+        <link>https://slashdot.org/</link>
+        <description>News for nerds, stuff that matters</description>
+    </channel>
+    <image>
+        <title>Slashdot</title>
+        <url>http://a.fsdn.com/sd/topics/topicslashdot.gif</url>
+        <link>https://slashdot.org/</link>
+    </image>
+    <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/xml" href="http://rss.slashdot.org/slashdot/slashdotMain/to" />
+    <feedburner:info xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" uri="slashdot/slashdotmain/to" />
+    <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" />
+    <item>
+        <title>UK Snooper's Charter, AKA The Investigatory Powers Bill, Voted Into Law</title>
+        <link>https://news.slashdot.org/story/16/06/07/2122221/uk-snoopers-charter-aka-the-investigatory-powers-bill-voted-into-law?utm_source=rss0.9mainlinkanon&amp;utm_medium=feed</link>
+    </item>
+    <item>
+        <title>FAA Warns of GPS Outages This Month During Mysterious Tests On the West Coast</title>
+        <link>https://news.slashdot.org/story/16/06/07/205233/faa-warns-of-gps-outages-this-month-during-mysterious-tests-on-the-west-coast?utm_source=rss0.9mainlinkanon&amp;utm_medium=feed</link>
+    </item>
+    <item>
+        <title>BlackBerry Really Struggling In Android Market</title>
+        <link>https://slashdot.org/story/16/06/07/1956249/blackberry-really-struggling-in-android-market?utm_source=rss0.9mainlinkanon&amp;utm_medium=feed</link>
+    </item>
+    <item>
+        <title>Netflix Blocks Many IPv6 Users Over Geolocation Difficulty</title>
+        <link>https://entertainment.slashdot.org/story/16/06/07/1854210/netflix-blocks-many-ipv6-users-over-geolocation-difficulty?utm_source=rss0.9mainlinkanon&amp;utm_medium=feed</link>
+    </item>
+    <item>
+        <title>The US Army Is Rolling Out Superhuman Hearing to Soldiers</title>
+        <link>https://tech.slashdot.org/story/16/06/07/1827223/the-us-army-is-rolling-out-superhuman-hearing-to-soldiers?utm_source=rss0.9mainlinkanon&amp;utm_medium=feed</link>
+    </item>
+    <item>
+        <title>Microsoft Could Turn Every PC Into an Xbox</title>
+        <link>https://games.slashdot.org/story/16/06/07/1750248/microsoft-could-turn-every-pc-into-an-xbox?utm_source=rss0.9mainlinkanon&amp;utm_medium=feed</link>
+    </item>
+    <item>
+        <title>Finnish Mail System Abandons Tuesday Delivery</title>
+        <link>https://tech.slashdot.org/story/16/06/07/170222/finnish-mail-system-abandons-tuesday-delivery?utm_source=rss0.9mainlinkanon&amp;utm_medium=feed</link>
+    </item>
+    <item>
+        <title>Broadband CEOs Admit Usage Caps Are Nothing More Than A Toll On Uncompetitive Markets</title>
+        <link>https://yro.slashdot.org/story/16/06/07/1634219/broadband-ceos-admit-usage-caps-are-nothing-more-than-a-toll-on-uncompetitive-markets?utm_source=rss0.9mainlinkanon&amp;utm_medium=feed</link>
+    </item>
+    <item>
+        <title>Password Re-user? Get Ready to Get Busy</title>
+        <link>https://tech.slashdot.org/story/16/06/07/1559200/password-re-user-get-ready-to-get-busy?utm_source=rss0.9mainlinkanon&amp;utm_medium=feed</link>
+    </item>
+    <item>
+        <title>Tech Firms Say FBI Wants Browsing History Without Warrant</title>
+        <link>https://politics.slashdot.org/story/16/06/07/1519258/tech-firms-say-fbi-wants-browsing-history-without-warrant?utm_source=rss0.9mainlinkanon&amp;utm_medium=feed</link>
+    </item>
+    <item>
+        <title>Huge Vulnerabilities In Facebook Chat and Messenger Exploitable With Basic HTML</title>
+        <link>https://it.slashdot.org/story/16/06/07/1435231/huge-vulnerabilities-in-facebook-chat-and-messenger-exploitable-with-basic-html?utm_source=rss0.9mainlinkanon&amp;utm_medium=feed</link>
+    </item>
+    <item>
+        <title>Samsung To Launch Smartphones With Bendable Screens in 2017, Reports Bloomberg</title>
+        <link>https://hardware.slashdot.org/story/16/06/07/1356256/samsung-to-launch-smartphones-with-bendable-screens-in-2017-reports-bloomberg?utm_source=rss0.9mainlinkanon&amp;utm_medium=feed</link>
+    </item>
+    <item>
+        <title>'Alarming' Rise In Ransomware Tracked</title>
+        <link>https://yro.slashdot.org/story/16/06/07/0659236/alarming-rise-in-ransomware-tracked?utm_source=rss0.9mainlinkanon&amp;utm_medium=feed</link>
+    </item>
+    <item>
+        <title>Password Autocorrect Without Compromising Security</title>
+        <link>https://tech.slashdot.org/story/16/06/07/0454252/password-autocorrect-without-compromising-security?utm_source=rss0.9mainlinkanon&amp;utm_medium=feed</link>
+    </item>
+    <item>
+        <title>Tesla: Model X Accident Caused By Driver Error, Not Autopilot</title>
+        <link>https://news.slashdot.org/story/16/06/07/0552227/tesla-model-x-accident-caused-by-driver-error-not-autopilot?utm_source=rss0.9mainlinkanon&amp;utm_medium=feed</link>
+    </item>
+    <textinput>
+        <title>Search Slashdot</title>
+        <description>Search Slashdot stories</description>
+        <name>query</name>
+        <link>https://slashdot.org/search.pl</link>
+    </textinput>
+</rdf:RDF>

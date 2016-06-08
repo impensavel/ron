@@ -14,9 +14,10 @@ namespace Impensavel\Ron;
 
 use SplFileInfo;
 
-use PHPUnit_Framework_TestCase;
+use Http\Mock\Client as HttpClient;
+use Http\Message\MessageFactory\GuzzleMessageFactory as MessageFactory;
 
-class BurgundyTest extends PHPUnit_Framework_TestCase
+class BurgundyTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * Test input file to PASS (readability)
@@ -41,7 +42,7 @@ class BurgundyTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test Burgundy class instantiation
+     * Test Burgundy class instantiation to PASS
      *
      * @access  public
      * @return  Burgundy
@@ -56,7 +57,37 @@ class BurgundyTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test read Atom 1.0 to PASS
+     * Test Burgundy + HTTP client instantiation to PASS
+     *
+     * @access  public
+     * @return  Burgundy
+     */
+    public function testCreateBurgundyHttpClientPass()
+    {
+        $message = new MessageFactory;
+        $client = new HttpClient($message);
+
+        // testReadAtom10UrlPass
+        $client->addResponse(\GuzzleHttp\Psr7\parse_response(file_get_contents(__DIR__.'/responses/atom10')));
+
+        // testReadRSS090UrlPass
+        $client->addResponse(\GuzzleHttp\Psr7\parse_response(file_get_contents(__DIR__.'/responses/rss090')));
+
+        // testReadRSS10UrlPass
+        $client->addResponse(\GuzzleHttp\Psr7\parse_response(file_get_contents(__DIR__.'/responses/rss10')));
+
+        // testReadRSS20UrlPass
+        $client->addResponse(\GuzzleHttp\Psr7\parse_response(file_get_contents(__DIR__.'/responses/rss20')));
+
+        $burgundy = Burgundy::create($client, $message);
+
+        $this->assertInstanceOf(Burgundy::class, $burgundy);
+
+        return $burgundy;
+    }
+
+    /**
+     * Test read Atom 1.0 feed from file to PASS
      *
      * @depends testInputFilesPass
      * @depends testCreateBurgundyPass
@@ -66,7 +97,7 @@ class BurgundyTest extends PHPUnit_Framework_TestCase
      * @param   Burgundy $burgundy
      * @return  void
      */
-    public function testReadAtom10Pass(array $files, Burgundy $burgundy)
+    public function testReadAtom10FilePass(array $files, Burgundy $burgundy)
     {
         $input = new SplFileInfo($files['atom10']);
 
@@ -81,7 +112,7 @@ class BurgundyTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test read RSS 0.90 to PASS
+     * Test read RSS 0.90 feed from file to PASS
      *
      * @depends testInputFilesPass
      * @depends testCreateBurgundyPass
@@ -91,7 +122,7 @@ class BurgundyTest extends PHPUnit_Framework_TestCase
      * @param   Burgundy $burgundy
      * @return  void
      */
-    public function testReadRSS090Pass(array $files, Burgundy $burgundy)
+    public function testReadRSS090FilePass(array $files, Burgundy $burgundy)
     {
         $input = new SplFileInfo($files['rss090']);
 
@@ -106,7 +137,7 @@ class BurgundyTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test read RSS 1.0 to PASS
+     * Test read RSS 1.0 feed from file to PASS
      *
      * @depends testInputFilesPass
      * @depends testCreateBurgundyPass
@@ -116,7 +147,7 @@ class BurgundyTest extends PHPUnit_Framework_TestCase
      * @param   Burgundy $burgundy
      * @return  void
      */
-    public function testReadRSS10Pass(array $files, Burgundy $burgundy)
+    public function testReadRSS10FilePass(array $files, Burgundy $burgundy)
     {
         $input = new SplFileInfo($files['rss10']);
 
@@ -131,7 +162,7 @@ class BurgundyTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test read RSS 2.0 to PASS
+     * Test read RSS 2.0 feed from file to PASS
      *
      * @depends testInputFilesPass
      * @depends testCreateBurgundyPass
@@ -141,11 +172,95 @@ class BurgundyTest extends PHPUnit_Framework_TestCase
      * @param   Burgundy $burgundy
      * @return  void
      */
-    public function testReadRSS20Pass(array $files, Burgundy $burgundy)
+    public function testReadRSS20FilePass(array $files, Burgundy $burgundy)
     {
         $input = new SplFileInfo($files['rss20']);
 
         $stories = $burgundy->read($input);
+
+        $this->assertInternalType('array', $stories);
+        $this->assertCount(5, $stories);
+
+        foreach ($stories as $story) {
+            $this->assertEquals('RSS', $story->getSpec());
+        }
+    }
+
+    /**
+     * Test read Atom 1.0 feed from URL to PASS
+     *
+     * @depends testCreateBurgundyHttpClientPass
+     *
+     * @access  public
+     * @param   Burgundy $burgundy
+     * @return  void
+     */
+    public function testReadAtom10UrlPass(Burgundy $burgundy)
+    {
+        $stories = $burgundy->read('http://foo.bar/atom10.xml');
+
+        $this->assertInternalType('array', $stories);
+        $this->assertCount(15, $stories);
+
+        foreach ($stories as $story) {
+            $this->assertEquals('Atom', $story->getSpec());
+        }
+    }
+
+    /**
+     * Test read RSS 0.90 feed from URL to PASS
+     *
+     * @depends testCreateBurgundyHttpClientPass
+     *
+     * @access  public
+     * @param   Burgundy $burgundy
+     * @return  void
+     */
+    public function testReadRSS090UrlPass(Burgundy $burgundy)
+    {
+        $stories = $burgundy->read('http://foo.bar/rss090.xml');
+
+        $this->assertInternalType('array', $stories);
+        $this->assertCount(15, $stories);
+
+        foreach ($stories as $story) {
+            $this->assertEquals('RDF', $story->getSpec());
+        }
+    }
+
+    /**
+     * Test read RSS 1.0 feed from URL to PASS
+     *
+     * @depends testCreateBurgundyHttpClientPass
+     *
+     * @access  public
+     * @param   Burgundy $burgundy
+     * @return  void
+     */
+    public function testReadRSS10UrlPass(Burgundy $burgundy)
+    {
+        $stories = $burgundy->read('http://foo.bar/rss10.xml');
+
+        $this->assertInternalType('array', $stories);
+        $this->assertCount(15, $stories);
+
+        foreach ($stories as $story) {
+            $this->assertEquals('RDF', $story->getSpec());
+        }
+    }
+
+    /**
+     * Test read RSS 2.0 feed from URL to PASS
+     *
+     * @depends testCreateBurgundyHttpClientPass
+     *
+     * @access  public
+     * @param   Burgundy $burgundy
+     * @return  void
+     */
+    public function testReadRSS20UrlPass(Burgundy $burgundy)
+    {
+        $stories = $burgundy->read('http://foo.bar/rss20.xml');
 
         $this->assertInternalType('array', $stories);
         $this->assertCount(5, $stories);

@@ -1,0 +1,380 @@
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=ISO-8859-1
+ETag: QgkL2OY4cnEOTMpdpEqEn0Z5Lf8
+Last-Modified: Tue, 07 Jun 2016 23:49:01 GMT
+Transfer-Encoding: chunked
+Date: Tue, 07 Jun 2016 23:57:21 GMT
+Expires: Tue, 07 Jun 2016 23:57:21 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Server: GSE
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/atom10full.xsl"?>
+<?xml-stylesheet type="text/css" media="screen" href="http://rss.slashdot.org/~d/styles/itemcontent.css"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:syn="http://purl.org/rss/1.0/modules/syndication/" xml:lang="en-us">
+    <title>Slashdot</title>
+    <id>https://slashdot.org/</id>
+    <link href="https://slashdot.org/" />
+    <subtitle>News for nerds, stuff that matters</subtitle>
+    <rights>Copyright 1997-2016, SlashdotMedia. All Rights Reserved.</rights>
+    <updated>2016-06-07T21:47:13+00:00</updated>
+    <author>
+        <name>Dice</name>
+        <email>help@slashdot.org</email>
+    </author>
+    <category term="Technology" />
+    <syn:updatePeriod>hourly</syn:updatePeriod>
+    <syn:updateFrequency>1</syn:updateFrequency>
+    <syn:updateBase>1970-01-01T00:00+00:00</syn:updateBase>
+    <logo>http://a.fsdn.com/sd/topics/topicslashdot.gif</logo>
+    <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/atom+xml" href="http://rss.slashdot.org/slashdot/slashdotMainatom" />
+    <feedburner:info xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" uri="slashdot/slashdotmainatom" />
+    <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" />
+    <entry>
+        <id>https://news.slashdot.org/story/16/06/07/2122221/uk-snoopers-charter-aka-the-investigatory-powers-bill-voted-into-law?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed</id>
+        <title>UK Snooper's Charter, AKA The Investigatory Powers Bill, Voted Into Law</title>
+        <link href="https://news.slashdot.org/story/16/06/07/2122221/uk-snoopers-charter-aka-the-investigatory-powers-bill-voted-into-law?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed" />
+        <summary type="html">Mark Wilson quotes a report from BetaNews: The controversial Snooper's Charter -- or the Investigatory Powers Bill as it is officially known -- has been voted into law by UK MPs. An overwhelming majority of politicians (444 to 69) voted in favor of the bill which has been roundly criticized by both the public and technology companies. The Investigatory Powers Bill grants the UK government, security, and intelligence agencies greater powers for monitoring internet usage, as well as permitting bulk data collection and remote hacking of smartphones. The law allows for the kind of mass surveillance that Edward Snowden warned about, and while the bill may have passed a majority vote, there are still those who fear not enough has been done to safeguard individuals' privacy.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+            &lt;a class="slashpop" href="http://twitter.com/home?status=UK+Snooper's+Charter%2C+AKA+The+Investigatory+Powers+Bill%2C+Voted+Into+Law%3A+http%3A%2F%2Fbit.ly%2F1tfArOD"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+            &lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fnews.slashdot.org%2Fstory%2F16%2F06%2F07%2F2122221%2Fuk-snoopers-charter-aka-the-investigatory-powers-bill-voted-into-law%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+            &lt;a class="nobg" href="http://plus.google.com/share?url=https://news.slashdot.org/story/16/06/07/2122221/uk-snoopers-charter-aka-the-investigatory-powers-bill-voted-into-law?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;
+
+
+
+            &lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://news.slashdot.org/story/16/06/07/2122221/uk-snoopers-charter-aka-the-investigatory-powers-bill-voted-into-law?utm_source=atom1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;</summary>
+        <updated>2016-06-07T21:24:00+00:00</updated>
+        <author>
+            <name>BeauHD</name>
+        </author>
+        <category term="business" />
+        <slash:department>watching-your-every-move</slash:department>
+        <slash:section>news</slash:section>
+        <slash:comments>9</slash:comments>
+        <slash:hit_parade>9,9,5,3,1,0,0</slash:hit_parade>
+    </entry>
+    <entry>
+        <id>https://news.slashdot.org/story/16/06/07/205233/faa-warns-of-gps-outages-this-month-during-mysterious-tests-on-the-west-coast?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed</id>
+        <title>FAA Warns of GPS Outages This Month During Mysterious Tests On the West Coast</title>
+        <link href="https://news.slashdot.org/story/16/06/07/205233/faa-warns-of-gps-outages-this-month-during-mysterious-tests-on-the-west-coast?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed" />
+        <summary type="html">Long-time Slashdot reader schwit1 shares a Gizmodo report: Starting today, it appears the U.S. military will be testing a device or devices that will potentially jam GPS signals for six hours each day. We say "appears" because officially the tests were announced by the FAA but are centered near the U.S. Navy's largest installation, China Lake, Californi -- home to the Navy's 1.1 million acre Naval Air Weapons Center in the Mojave Desert. And the Navy won't tell us much about what's going on. The FAA issued an advisory warning pilots on Saturday that global positioning systems (GPS) could be unreliable during six different days this month, primarily in the Southwestern United States. On June 7, 9, 21, 23, 28, and 30th the GPS interference testing(PDF) will be taking place between 9:30am and 3:30pm Pacific time. But if you're on the ground, you probably won't notice interference.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+            &lt;a class="slashpop" href="http://twitter.com/home?status=FAA+Warns+of+GPS+Outages+This+Month+During+Mysterious+Tests+On+the+West+Coast%3A+http%3A%2F%2Fbit.ly%2F1U6kRxb"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+            &lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fnews.slashdot.org%2Fstory%2F16%2F06%2F07%2F205233%2Ffaa-warns-of-gps-outages-this-month-during-mysterious-tests-on-the-west-coast%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+            &lt;a class="nobg" href="http://plus.google.com/share?url=https://news.slashdot.org/story/16/06/07/205233/faa-warns-of-gps-outages-this-month-during-mysterious-tests-on-the-west-coast?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;
+
+
+
+            &lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://news.slashdot.org/story/16/06/07/205233/faa-warns-of-gps-outages-this-month-during-mysterious-tests-on-the-west-coast?utm_source=atom1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;</summary>
+        <updated>2016-06-07T20:40:00+00:00</updated>
+        <author>
+            <name>manishs</name>
+        </author>
+        <category term="usa" />
+        <slash:department>X-files-I-want-to-believe</slash:department>
+        <slash:section>news</slash:section>
+        <slash:comments>38</slash:comments>
+        <slash:hit_parade>38,38,22,19,6,0,0</slash:hit_parade>
+    </entry>
+    <entry>
+        <id>https://slashdot.org/story/16/06/07/1956249/blackberry-really-struggling-in-android-market?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed</id>
+        <title>BlackBerry Really Struggling In Android Market</title>
+        <link href="https://slashdot.org/story/16/06/07/1956249/blackberry-really-struggling-in-android-market?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed" />
+        <summary type="html">Once an icon in the smartphone business, BlackBerry is having a hard time transitioning to Android. According to a report on CNET, the company's BlackBerry Priv Android smartphone, citing a high-level executive at AT&amp;amp;T, is really struggling. From the report: AT&amp;amp;T offered a more detailed account of why the Priv has disappointed. BlackBerry and the carrier expected to see demand for an Android phone with a physical keyboard. Instead, most of the buyers were BlackBerry loyalists, the executive said. Those faithful, however, struggled with the transition from the BlackBerry operating system to the Android operating system, leading to a higher-than-expected rate of return. BlackBerry's decision to market the phone as a high-end device also hurt its prospects, the executive said. The Priv initially sold unlocked for $699, above the starting price of the iPhone 6S, which sells for $650. Few premium phones have fared well beyond devices from Apple and Samsung.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+            &lt;a class="slashpop" href="http://twitter.com/home?status=BlackBerry+Really+Struggling+In+Android+Market%3A+http%3A%2F%2Fbit.ly%2F25KG9sV"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+            &lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fslashdot.org%2Fstory%2F16%2F06%2F07%2F1956249%2Fblackberry-really-struggling-in-android-market%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+            &lt;a class="nobg" href="http://plus.google.com/share?url=https://slashdot.org/story/16/06/07/1956249/blackberry-really-struggling-in-android-market?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;
+
+
+
+            &lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://slashdot.org/story/16/06/07/1956249/blackberry-really-struggling-in-android-market?utm_source=atom1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;</summary>
+        <updated>2016-06-07T20:00:00+00:00</updated>
+        <author>
+            <name>manishs</name>
+        </author>
+        <category term="blackberry" />
+        <slash:department>stepping-in-rival's-territory</slash:department>
+        <slash:section>slashdot</slash:section>
+        <slash:comments>40</slash:comments>
+        <slash:hit_parade>40,40,30,28,7,2,1</slash:hit_parade>
+    </entry>
+    <entry>
+        <id>https://entertainment.slashdot.org/story/16/06/07/1854210/netflix-blocks-many-ipv6-users-over-geolocation-difficulty?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed</id>
+        <title>Netflix Blocks Many IPv6 Users Over Geolocation Difficulty</title>
+        <link href="https://entertainment.slashdot.org/story/16/06/07/1854210/netflix-blocks-many-ipv6-users-over-geolocation-difficulty?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed" />
+        <summary type="html">An anonymous reader writes: In another example of content owners putting the screws to Netflix and consumers, network operators are reporting that the popular streaming service has begun blocking many customers on IPv6 connections. Many users of Hurricane Electric's IPv4-to-IPv6 service have been blocked entirely, while users on ISPs that provide native IPv6 are also facing difficulty connecting and watching shows. Netflix customer service has been advising users that the only workaround is to completely disable IPv6 on their computers. The ban on IPv6 appears to be the latest round of a wider crackdown against users whose IP address can't be sufficiently geolocated. While the rest of the internet moves forward with implementing IPv6, content owners are forcing Netflix to move backwards.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+            &lt;a class="slashpop" href="http://twitter.com/home?status=Netflix+Blocks+Many+IPv6+Users+Over+Geolocation+Difficulty%3A+http%3A%2F%2Fbit.ly%2F1t6aqki"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+            &lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fentertainment.slashdot.org%2Fstory%2F16%2F06%2F07%2F1854210%2Fnetflix-blocks-many-ipv6-users-over-geolocation-difficulty%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+            &lt;a class="nobg" href="http://plus.google.com/share?url=https://entertainment.slashdot.org/story/16/06/07/1854210/netflix-blocks-many-ipv6-users-over-geolocation-difficulty?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;
+
+
+
+            &lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://entertainment.slashdot.org/story/16/06/07/1854210/netflix-blocks-many-ipv6-users-over-geolocation-difficulty?utm_source=atom1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;</summary>
+        <updated>2016-06-07T19:20:00+00:00</updated>
+        <author>
+            <name>manishs</name>
+        </author>
+        <category term="digital" />
+        <slash:department>assuming-control</slash:department>
+        <slash:section>entertainment</slash:section>
+        <slash:comments>94</slash:comments>
+        <slash:hit_parade>94,92,71,61,20,9,2</slash:hit_parade>
+    </entry>
+    <entry>
+        <id>https://tech.slashdot.org/story/16/06/07/1827223/the-us-army-is-rolling-out-superhuman-hearing-to-soldiers?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed</id>
+        <title>The US Army Is Rolling Out Superhuman Hearing to Soldiers</title>
+        <link href="https://tech.slashdot.org/story/16/06/07/1827223/the-us-army-is-rolling-out-superhuman-hearing-to-soldiers?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed" />
+        <summary type="html">An anonymous reader writes: The U.S. Army has developed an all-in-one hearing system that not only boosts the hearing of troops in the field, it also acts to cut down the noise of battle. The system, known as Tactical Communication and Protective System (TCAPS), is currently rolling out to units in the field. TCAPS is $2,000 pair of earbuds designed to limit battlefield noise exposure, cutting off noise that reaches a set decibel threshold. The wearer can still hear gunshots and estimate their direction, but the noise is dampened to a non-damaging level thanks to microphones that detect the noise, and internals that use sound canceling technology to modify it for a wearer's ears. At the same time, the decibel cap allows TCAPS-equipped soldiers to hear the voices of others around him, including through radios and other communications equipment.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+            &lt;a class="slashpop" href="http://twitter.com/home?status=The+US+Army+Is+Rolling+Out+Superhuman+Hearing+to+Soldiers%3A+http%3A%2F%2Fbit.ly%2F25KAaEw"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+            &lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Ftech.slashdot.org%2Fstory%2F16%2F06%2F07%2F1827223%2Fthe-us-army-is-rolling-out-superhuman-hearing-to-soldiers%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+            &lt;a class="nobg" href="http://plus.google.com/share?url=https://tech.slashdot.org/story/16/06/07/1827223/the-us-army-is-rolling-out-superhuman-hearing-to-soldiers?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;
+
+
+
+            &lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://tech.slashdot.org/story/16/06/07/1827223/the-us-army-is-rolling-out-superhuman-hearing-to-soldiers?utm_source=atom1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;</summary>
+        <updated>2016-06-07T18:40:00+00:00</updated>
+        <author>
+            <name>manishs</name>
+        </author>
+        <category term="military" />
+        <slash:department>innovation-trickling-down</slash:department>
+        <slash:section>technology</slash:section>
+        <slash:comments>73</slash:comments>
+        <slash:hit_parade>73,73,44,40,12,3,0</slash:hit_parade>
+    </entry>
+    <entry>
+        <id>https://games.slashdot.org/story/16/06/07/1750248/microsoft-could-turn-every-pc-into-an-xbox?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed</id>
+        <title>Microsoft Could Turn Every PC Into an Xbox</title>
+        <link href="https://games.slashdot.org/story/16/06/07/1750248/microsoft-could-turn-every-pc-into-an-xbox?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed" />
+        <summary type="html">For the past few years, Microsoft has been trying to mold Xbox One system's user interface and functionalities to resemble that of Windows 8 and Windows 10's Modern UI. But the company has also hinted that we will be seeing a closer integration in the coming months. It is expected to unveil some of that at E3 tradeshow next week. Long-time Microsoft watcher Tom Warren reports for The Verge: Microsoft is currently working on a secret project internally, codenamed Helix. Kotaku originally reported on the Project Helix name, and the work is designed to more closely combine Xbox and Windows 10. Some of that work has started, but more of it is due later this year and next year with future upgrades to Windows 10. Microsoft wants to enable features like streaming PC games to the Xbox One, but sources familiar with the company's plans also tell us there are greater ambitions to make Xbox One games playable on a PC without needing a console for streaming. Part of this could involve bringing the full Xbox One UI and system directly into desktop versions of Windows 10. The latest Xbox One dashboards are built on top of Windows 10, so most of the work involved would be customizing the interface towards keyboard and mouse. Bringing the Xbox One UI over to Windows 10 machines would effectively turn every PC into an Xbox One, especially if they're also capable of running the latest console games.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+            &lt;a class="slashpop" href="http://twitter.com/home?status=Microsoft+Could+Turn+Every+PC+Into+an+Xbox%3A+http%3A%2F%2Fbit.ly%2F1PgcqLC"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+            &lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fgames.slashdot.org%2Fstory%2F16%2F06%2F07%2F1750248%2Fmicrosoft-could-turn-every-pc-into-an-xbox%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+            &lt;a class="nobg" href="http://plus.google.com/share?url=https://games.slashdot.org/story/16/06/07/1750248/microsoft-could-turn-every-pc-into-an-xbox?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;
+
+
+
+            &lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://games.slashdot.org/story/16/06/07/1750248/microsoft-could-turn-every-pc-into-an-xbox?utm_source=atom1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;</summary>
+        <updated>2016-06-07T18:00:00+00:00</updated>
+        <author>
+            <name>manishs</name>
+        </author>
+        <category term="microsoft" />
+        <slash:department>for-better-or-worse</slash:department>
+        <slash:section>games</slash:section>
+        <slash:comments>136</slash:comments>
+        <slash:hit_parade>136,135,94,80,16,6,4</slash:hit_parade>
+    </entry>
+    <entry>
+        <id>https://tech.slashdot.org/story/16/06/07/170222/finnish-mail-system-abandons-tuesday-delivery?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed</id>
+        <title>Finnish Mail System Abandons Tuesday Delivery</title>
+        <link href="https://tech.slashdot.org/story/16/06/07/170222/finnish-mail-system-abandons-tuesday-delivery?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed" />
+        <summary type="html">Reader jones_supa writes: In a world moving to electronic communications, the snail mail traffic has seen a huge drop. Because of this, Posti, the mail delivery organization of Finland will not be delivering letters and magazines on Tuesdays anymore. Tuesday was selected because it generally has the lowest volume of mail. For example, magazines and advertisements are targeted to the end of the week, so that people have more time for shopping dreams in the weekend. Another reason is that Posti recently launched a lawn mowing service which operates on Tuesdays.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+            &lt;a class="slashpop" href="http://twitter.com/home?status=Finnish+Mail+System+Abandons+Tuesday+Delivery%3A+http%3A%2F%2Fbit.ly%2F1TTJ9s6"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+            &lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Ftech.slashdot.org%2Fstory%2F16%2F06%2F07%2F170222%2Ffinnish-mail-system-abandons-tuesday-delivery%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+            &lt;a class="nobg" href="http://plus.google.com/share?url=https://tech.slashdot.org/story/16/06/07/170222/finnish-mail-system-abandons-tuesday-delivery?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;
+
+
+
+            &lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://tech.slashdot.org/story/16/06/07/170222/finnish-mail-system-abandons-tuesday-delivery?utm_source=atom1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;</summary>
+        <updated>2016-06-07T17:20:00+00:00</updated>
+        <author>
+            <name>manishs</name>
+        </author>
+        <category term="it" />
+        <slash:department>cutting-cost</slash:department>
+        <slash:section>technology</slash:section>
+        <slash:comments>123</slash:comments>
+        <slash:hit_parade>123,123,93,82,19,6,5</slash:hit_parade>
+    </entry>
+    <entry>
+        <id>https://yro.slashdot.org/story/16/06/07/1634219/broadband-ceos-admit-usage-caps-are-nothing-more-than-a-toll-on-uncompetitive-markets?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed</id>
+        <title>Broadband CEOs Admit Usage Caps Are Nothing More Than A Toll On Uncompetitive Markets</title>
+        <link href="https://yro.slashdot.org/story/16/06/07/1634219/broadband-ceos-admit-usage-caps-are-nothing-more-than-a-toll-on-uncompetitive-markets?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed" />
+        <summary type="html">Though giant ISPs such as AT&amp;amp;T and Comcast continue to impose caps on users with several of their data plans, a crop of local ISPs is no longer hesitating from admitting that there is no justification for these caps as the cost to provide broadband services has only dropped in the past years. From a TechDirt article (condensed): "The cost of increasing [broadband] capacity has declined much faster than the increase in data traffic," says Dane Jasper, CEO of Sonic, an independent ISP based in Santa Rosa, Calif. [...] Frontier Communications CEO Dan McCarthy adds, "There may be a time when usage-based pricing is the right solution for the market, but I really don't see that as a path the market is taking at this point in time." Suddenlink CEO Jerry Kent said, "I think one of the things people don't realize [relates to] the question of capital intensity and having to keep spending to keep up with capacity. Those days are basically over, and you are seeing significant free cash flow generated from the cable operators as our capital expenditures continue to come down."&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+            &lt;a class="slashpop" href="http://twitter.com/home?status=Broadband+CEOs+Admit+Usage+Caps+Are+Nothing+More+Than+A+Toll+On+Uncompetitive+Markets%3A+http%3A%2F%2Fbit.ly%2F1Oc3Rqa"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+            &lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fyro.slashdot.org%2Fstory%2F16%2F06%2F07%2F1634219%2Fbroadband-ceos-admit-usage-caps-are-nothing-more-than-a-toll-on-uncompetitive-markets%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+            &lt;a class="nobg" href="http://plus.google.com/share?url=https://yro.slashdot.org/story/16/06/07/1634219/broadband-ceos-admit-usage-caps-are-nothing-more-than-a-toll-on-uncompetitive-markets?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;
+
+
+
+            &lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://yro.slashdot.org/story/16/06/07/1634219/broadband-ceos-admit-usage-caps-are-nothing-more-than-a-toll-on-uncompetitive-markets?utm_source=atom1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;</summary>
+        <updated>2016-06-07T16:40:00+00:00</updated>
+        <author>
+            <name>manishs</name>
+        </author>
+        <category term="att" />
+        <slash:department>the-truth-is-out-there</slash:department>
+        <slash:section>yro</slash:section>
+        <slash:comments>109</slash:comments>
+        <slash:hit_parade>109,103,68,62,23,12,8</slash:hit_parade>
+    </entry>
+    <entry>
+        <id>https://tech.slashdot.org/story/16/06/07/1559200/password-re-user-get-ready-to-get-busy?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed</id>
+        <title>Password Re-user? Get Ready to Get Busy</title>
+        <link href="https://tech.slashdot.org/story/16/06/07/1559200/password-re-user-get-ready-to-get-busy?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed" />
+        <summary type="html">Security reporter Brian Krebs writes: In the wake of megabreaches at some of the Internet's most-recognized destinations, don't be surprised if you receive password reset requests from numerous companies that didn't experience a breach: Some big name companies -- including Facebook and Netflix -- are in the habit of combing through huge data leak troves for credentials that match those of their customers and then forcing a password reset for those users. Netflix.com, for example, sent out a notification late last week to users who made the mistake of re-using their Netflix password at Linkedin, Tumblr or MySpace. All of three of those breaches are years old, but the scope of the intrusions (more than a half billion usernames and passwords leaked in total) only became apparent recently when the credentials were posted online at various sites and services.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+            &lt;a class="slashpop" href="http://twitter.com/home?status=Password+Re-user%3F+Get+Ready+to+Get+Busy%3A+http%3A%2F%2Fbit.ly%2F1TXALx8"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+            &lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Ftech.slashdot.org%2Fstory%2F16%2F06%2F07%2F1559200%2Fpassword-re-user-get-ready-to-get-busy%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+            &lt;a class="nobg" href="http://plus.google.com/share?url=https://tech.slashdot.org/story/16/06/07/1559200/password-re-user-get-ready-to-get-busy?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;
+
+
+
+            &lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://tech.slashdot.org/story/16/06/07/1559200/password-re-user-get-ready-to-get-busy?utm_source=atom1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;</summary>
+        <updated>2016-06-07T16:00:00+00:00</updated>
+        <author>
+            <name>manishs</name>
+        </author>
+        <category term="facebook" />
+        <slash:department>security-measures</slash:department>
+        <slash:section>technology</slash:section>
+        <slash:comments>95</slash:comments>
+        <slash:hit_parade>95,89,56,43,13,5,1</slash:hit_parade>
+    </entry>
+    <entry>
+        <id>https://politics.slashdot.org/story/16/06/07/1519258/tech-firms-say-fbi-wants-browsing-history-without-warrant?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed</id>
+        <title>Tech Firms Say FBI Wants Browsing History Without Warrant</title>
+        <link href="https://politics.slashdot.org/story/16/06/07/1519258/tech-firms-say-fbi-wants-browsing-history-without-warrant?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed" />
+        <summary type="html">Aaron Souppouris, reporting for Engadget: Tech companies and privacy advocates are warning against new legislation that would give the FBI the ability to access "electronic communication transactional records" (ECTRs) without a warrant in spy and terrorism cases. ECTRs include high-level information on what sites a person visited, the time spent on those sites, email metadata, location information and IP addresses. To gain access to this data, a special agent in charge of a bureau field office need only write a "national security letter" (NSL) that doesn't require a judge's approval. It's worth noting that ECTRs don't amount to a full browsing history. If a suspected terrorist were reading this article, the FBI would only see they read "engadget.com" and how long for, rather than the specific page links. Additionally, the ECTRs won't include the content of emails, search queries, or form content, but will feature metadata, so the FBI would know who someone is messaging and when.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+            &lt;a class="slashpop" href="http://twitter.com/home?status=Tech+Firms+Say+FBI+Wants+Browsing+History+Without+Warrant%3A+http%3A%2F%2Fbit.ly%2F1RWj3CA"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+            &lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fpolitics.slashdot.org%2Fstory%2F16%2F06%2F07%2F1519258%2Ftech-firms-say-fbi-wants-browsing-history-without-warrant%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+            &lt;a class="nobg" href="http://plus.google.com/share?url=https://politics.slashdot.org/story/16/06/07/1519258/tech-firms-say-fbi-wants-browsing-history-without-warrant?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;
+
+
+
+            &lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://politics.slashdot.org/story/16/06/07/1519258/tech-firms-say-fbi-wants-browsing-history-without-warrant?utm_source=atom1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;</summary>
+        <updated>2016-06-07T15:21:00+00:00</updated>
+        <author>
+            <name>manishs</name>
+        </author>
+        <category term="facebook" />
+        <slash:department>it's-coming</slash:department>
+        <slash:section>politics</slash:section>
+        <slash:comments>120</slash:comments>
+        <slash:hit_parade>120,120,70,60,19,9,7</slash:hit_parade>
+    </entry>
+    <entry>
+        <id>https://it.slashdot.org/story/16/06/07/1435231/huge-vulnerabilities-in-facebook-chat-and-messenger-exploitable-with-basic-html?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed</id>
+        <title>Huge Vulnerabilities In Facebook Chat and Messenger Exploitable With Basic HTML</title>
+        <link href="https://it.slashdot.org/story/16/06/07/1435231/huge-vulnerabilities-in-facebook-chat-and-messenger-exploitable-with-basic-html?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed" />
+        <summary type="html">An anonymous reader writes: Check Point's security research team has discovered vulnerabilities in Facebook's standard online Chat function, as well as Messenger app. The vulnerabilities, if exploited, would allow anyone to essentially take control of any message sent by Chat or Messenger, modify its contents, distribute malware and even insert automation techniques to outsmart security defences. To exploit the vulnerability, an attacker simply needed to identify the unique ID for the sent message he or she is targeting.According to the report, Facebook, in conjunction with Check Point's researchers, patched the vulnerability earlier this month.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+            &lt;a class="slashpop" href="http://twitter.com/home?status=Huge+Vulnerabilities+In+Facebook+Chat+and+Messenger+Exploitable+With+Basic+HTML%3A+http%3A%2F%2Fbit.ly%2F1t5kHwV"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+            &lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fit.slashdot.org%2Fstory%2F16%2F06%2F07%2F1435231%2Fhuge-vulnerabilities-in-facebook-chat-and-messenger-exploitable-with-basic-html%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+            &lt;a class="nobg" href="http://plus.google.com/share?url=https://it.slashdot.org/story/16/06/07/1435231/huge-vulnerabilities-in-facebook-chat-and-messenger-exploitable-with-basic-html?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;
+
+
+
+            &lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://it.slashdot.org/story/16/06/07/1435231/huge-vulnerabilities-in-facebook-chat-and-messenger-exploitable-with-basic-html?utm_source=atom1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;</summary>
+        <updated>2016-06-07T14:40:00+00:00</updated>
+        <author>
+            <name>manishs</name>
+        </author>
+        <category term="security" />
+        <slash:department>security-woes</slash:department>
+        <slash:section>it</slash:section>
+        <slash:comments>37</slash:comments>
+        <slash:hit_parade>37,36,25,19,8,4,2</slash:hit_parade>
+    </entry>
+    <entry>
+        <id>https://hardware.slashdot.org/story/16/06/07/1356256/samsung-to-launch-smartphones-with-bendable-screens-in-2017-reports-bloomberg?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed</id>
+        <title>Samsung To Launch Smartphones With Bendable Screens in 2017, Reports Bloomberg</title>
+        <link href="https://hardware.slashdot.org/story/16/06/07/1356256/samsung-to-launch-smartphones-with-bendable-screens-in-2017-reports-bloomberg?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed" />
+        <summary type="html">Samsung plans to launch two smartphones with bendable screens. The South Korean technology conglomerate could showcase these two phones as early as the Mobile World Congress tradeshow next year, according to Bloomberg, which cites sources "familiar with the matter." The publication adds that one of the phones will fold in half like a makeup compact, whereas the other with a 5-inch display would fold out into a larger tablet-style device. From the report: The devices using organic light-emitting diodes could be unveiled as soon as early 2017. That would likely give it a head start on new Apple Inc. iPhones. The second Samsung model will have a 5-inch screen when used as a handset, that unfurls into a display that's as large as 8 inches, similar to a tablet, the people said.As for more immediate future plans, the Galaxy Note 6, which is expected to launch later this year, might ship with the moniker "Note 7". This would allow Samsung to put its flagship phablet's branding in line with its current smartphone numbering. Samsung launched the Galaxy S7 and S7 Edge earlier this year. (Editor's note: Bloomberg website, though very credible, has pop-up videos, which some of you may find annoying. Just in case, here's an alternate source.)&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+            &lt;a class="slashpop" href="http://twitter.com/home?status=Samsung+To+Launch+Smartphones+With+Bendable+Screens+in+2017%2C+Reports+Bloomberg%3A+http%3A%2F%2Fbit.ly%2F25KhhS6"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+            &lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fhardware.slashdot.org%2Fstory%2F16%2F06%2F07%2F1356256%2Fsamsung-to-launch-smartphones-with-bendable-screens-in-2017-reports-bloomberg%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+            &lt;a class="nobg" href="http://plus.google.com/share?url=https://hardware.slashdot.org/story/16/06/07/1356256/samsung-to-launch-smartphones-with-bendable-screens-in-2017-reports-bloomberg?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;
+
+
+
+            &lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://hardware.slashdot.org/story/16/06/07/1356256/samsung-to-launch-smartphones-with-bendable-screens-in-2017-reports-bloomberg?utm_source=atom1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;</summary>
+        <updated>2016-06-07T13:59:00+00:00</updated>
+        <author>
+            <name>manishs</name>
+        </author>
+        <category term="hardware" />
+        <slash:department>well-that's-at-least-unique</slash:department>
+        <slash:section>hardware</slash:section>
+        <slash:comments>58</slash:comments>
+        <slash:hit_parade>58,57,39,32,9,4,3</slash:hit_parade>
+    </entry>
+    <entry>
+        <id>https://yro.slashdot.org/story/16/06/07/0659236/alarming-rise-in-ransomware-tracked?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed</id>
+        <title>'Alarming' Rise In Ransomware Tracked</title>
+        <link href="https://yro.slashdot.org/story/16/06/07/0659236/alarming-rise-in-ransomware-tracked?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed" />
+        <summary type="html">An anonymous reader quotes a report from BBC: Cyber-thieves are adopting ransomware in "alarming" numbers, say security researchers. There are now more than 120 separate families of ransomware, said experts studying the malicious software. Other researchers have seen a 3,500% increase in the criminal use of net infrastructure that helps run ransomware campaigns. The rise is driven by the money thieves make with ransomware and the increase in kits that help them snare victims. Ransomware was easy to use, low risk and offered a high reward, said Bart Parys, a security researcher who helps to maintain a list of the growing numbers of types of this kind of malware. Mr Parys and his colleagues have now logged 124 separate variants of ransomware. Some virulent strains, such as Locky and Cryptolocker, were controlled by individual gangs, he said, but others were being used by people buying the service from an underground market. A separate indicator of the growth of ransomware came from the amount of net infrastructure that gangs behind the malware had been seen using. The numbers of web domains used to host the information and payment systems had grown 35-fold, said Infoblox in its annual report which monitors these chunks of the net's infrastructure. A lot of ransomware reached victims via spear-phishing campaigns or booby-trapped adverts, he said, but other gangs used specialized "crypters" and "packers" that made files look benign. Others relied on inserting malware into working memory so it never reached the parts of a computer on which most security software keeps an eye. Ars Technica reports that drive-by attacks that install the TeslaCrypt crypto ransomware are now able to bypass Microsoft's EMET.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+            &lt;a class="slashpop" href="http://twitter.com/home?status='Alarming'+Rise+In+Ransomware+Tracked%3A+http%3A%2F%2Fbit.ly%2F1rbk6su"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+            &lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fyro.slashdot.org%2Fstory%2F16%2F06%2F07%2F0659236%2Falarming-rise-in-ransomware-tracked%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+            &lt;a class="nobg" href="http://plus.google.com/share?url=https://yro.slashdot.org/story/16/06/07/0659236/alarming-rise-in-ransomware-tracked?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;
+
+
+
+            &lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://yro.slashdot.org/story/16/06/07/0659236/alarming-rise-in-ransomware-tracked?utm_source=atom1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;</summary>
+        <updated>2016-06-07T13:00:00+00:00</updated>
+        <author>
+            <name>BeauHD</name>
+        </author>
+        <category term="privacy" />
+        <slash:department>return-on-investment</slash:department>
+        <slash:section>yro</slash:section>
+        <slash:comments>44</slash:comments>
+        <slash:hit_parade>44,44,27,23,10,5,2</slash:hit_parade>
+    </entry>
+    <entry>
+        <id>https://tech.slashdot.org/story/16/06/07/0454252/password-autocorrect-without-compromising-security?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed</id>
+        <title>Password Autocorrect Without Compromising Security</title>
+        <link href="https://tech.slashdot.org/story/16/06/07/0454252/password-autocorrect-without-compromising-security?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed" />
+        <summary type="html">msm1267 quotes a report from Threatpost: Intuitively, auto-correcting passwords would seem to be a terrible idea, and the worst security-for-convenience tradeoff in technology history. But a team of academics from Cornell University, MIT and a Dropbox security engineer say that the degradation of security from the introduction of such an authentication mechanism is negligible. The team -- Rahul Chatterjee, Ari Juels and Thomas Ristenpart of Cornell University, Anish Athalye of MIT, and Devdatta Akhawe of Dropbox -- presented their findings in a paper called "pASSWORD tYPOS and How to Correct Them Securely" at the recent IEEE Symposium on Security and Privacy. The paper describes a framework for what the team calls typo-tolerant passwords that significantly enhances usability without compromising security. The paper focuses on three common types of password errors that users make while typing: engaging caps lock; inadvertently capitalizing the first letter of a password; or adding or omitting characters to the beginning or end of a password. By instituting an autocorrect scheme, the researchers said in their paper that they could reduce common mistakes and user frustrations with logins. Recently, an anonymous user asked Slashdot how one creates a highly secure password after a study from Carnegie Mellon issued a warning about common user misconceptions. You can engage in the conversation and/or read the witty responses here.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+            &lt;a class="slashpop" href="http://twitter.com/home?status=Password+Autocorrect+Without+Compromising+Security%3A+http%3A%2F%2Fbit.ly%2F1UDkbzv"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+            &lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Ftech.slashdot.org%2Fstory%2F16%2F06%2F07%2F0454252%2Fpassword-autocorrect-without-compromising-security%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+            &lt;a class="nobg" href="http://plus.google.com/share?url=https://tech.slashdot.org/story/16/06/07/0454252/password-autocorrect-without-compromising-security?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;
+
+
+
+            &lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://tech.slashdot.org/story/16/06/07/0454252/password-autocorrect-without-compromising-security?utm_source=atom1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;</summary>
+        <updated>2016-06-07T10:00:00+00:00</updated>
+        <author>
+            <name>BeauHD</name>
+        </author>
+        <category term="security" />
+        <slash:department>autofill</slash:department>
+        <slash:section>technology</slash:section>
+        <slash:comments>118</slash:comments>
+        <slash:hit_parade>118,115,70,58,22,10,3</slash:hit_parade>
+    </entry>
+    <entry>
+        <id>https://news.slashdot.org/story/16/06/07/0552227/tesla-model-x-accident-caused-by-driver-error-not-autopilot?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed</id>
+        <title>Tesla: Model X Accident Caused By Driver Error, Not Autopilot</title>
+        <link href="https://news.slashdot.org/story/16/06/07/0552227/tesla-model-x-accident-caused-by-driver-error-not-autopilot?utm_source=atom1.0mainlinkanon&amp;utm_medium=feed" />
+        <summary type="html">An anonymous reader writes: Tesla has responded to a recent report from a Model X owner claiming their vehicle suddenly accelerated at "maximum speed" by itself, jumped a curb and slammed into the side of a building while his wife was sitting behind the wheel. They said it analyzed vehicle logs, "which confirm that this Model X was operating correctly under manual control and was never in Autopilot or cruise control at the time of the incident or in the minutes before. Data shows that the vehicle was traveling at 6 mph when the accelerator pedal was abruptly increased to 100%. Consistent with the driver's action, the vehicle applied torque and accelerated as instructed. Safety is the top priority at Tesla and we engineer and build our cars with this foremost in mind. We are pleased that the driver is ok and ask our customers to exercise safe behavior when using our vehicles." When will people stop lying about Tesla's Autopilot mode crashing their cars? One Tesla owner recently filed a Lemon Law claim against the company over a high number of quality control issues.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+            &lt;a class="slashpop" href="http://twitter.com/home?status=Tesla%3A+Model+X+Accident+Caused+By+Driver+Error%2C+Not+Autopilot%3A+http%3A%2F%2Fbit.ly%2F1t4he1K"&gt;&lt;img src="https://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+            &lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fnews.slashdot.org%2Fstory%2F16%2F06%2F07%2F0552227%2Ftesla-model-x-accident-caused-by-driver-error-not-autopilot%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="https://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+            &lt;a class="nobg" href="http://plus.google.com/share?url=https://news.slashdot.org/story/16/06/07/0552227/tesla-model-x-accident-caused-by-driver-error-not-autopilot?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;
+
+
+
+            &lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://news.slashdot.org/story/16/06/07/0552227/tesla-model-x-accident-caused-by-driver-error-not-autopilot?utm_source=atom1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;</summary>
+        <updated>2016-06-07T07:00:00+00:00</updated>
+        <author>
+            <name>BeauHD</name>
+        </author>
+        <category term="business" />
+        <slash:department>false-accusations</slash:department>
+        <slash:section>news</slash:section>
+        <slash:comments>530</slash:comments>
+        <slash:hit_parade>530,523,343,298,62,40,23</slash:hit_parade>
+    </entry>
+</feed>
