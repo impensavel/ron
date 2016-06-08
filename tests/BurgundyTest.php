@@ -269,4 +269,20 @@ class BurgundyTest extends \PHPUnit_Framework_TestCase
             $this->assertEquals('RSS', $story->getSpec());
         }
     }
+
+    /**
+     * Test read from URL to FAIL (HttpClient + MessageFactory not set)
+     *
+     * @depends                   testCreateBurgundyPass
+     * @expectedException         \Impensavel\Ron\RonException
+     * @expectedExceptionMessage  HttpClient and MessageFactory required to fetch data from a URL
+     *
+     * @access  public
+     * @param   Burgundy $burgundy
+     * @return  void
+     */
+    public function testReadUrlFail(Burgundy $burgundy)
+    {
+        $burgundy->read('http://foo.bar/feed.xml');
+    }
 }
