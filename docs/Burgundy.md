@@ -93,7 +93,6 @@ try
 
 ### Reading local data
 When the feeds are locally available, there's no need to pass an `HttpClient` or `MessageFactory`.
-The `read()` method also supports `string`, `resource` (normally the result of a `fopen()`) and `SplFileInfo` values.
 
 **Dependencies:**
 ``` bash
@@ -207,6 +206,6 @@ $specs = [
 $burgundy = Burgundy::create($client, $message, $specs);
 ```
 
-#### Extensions
+#### Other specifications/extensions
 - [Media RSS 2.0 Module](http://www.rssboard.org/media-rss)
 - [OpenSearch RSS 2.0 Module](http://www.opensearch.org/Specifications/OpenSearch/1.1)
