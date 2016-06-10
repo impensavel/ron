@@ -47,6 +47,10 @@ try
     $input = 'http://feeds.bbci.co.uk/news/technology/rss.xml';
 
     $stories = $burgundy->read($input);
+
+    foreach ($stories as $story) {
+        var_dump($story);
+    }
 } catch (RonException $e) {
     // Handle exceptions
 }
@@ -83,7 +87,11 @@ try
 
     $input = 'http://feeds.bbci.co.uk/news/technology/rss.xml';
 
-    $stories = $burgundy->read($input);    
+    $stories = $burgundy->read($input);
+
+    foreach ($stories as $story) {
+        var_dump($story);
+    }
 } catch (RonException $e) {
     // Handle exceptions
 }
@@ -120,6 +128,10 @@ try
 EOT;
 
     $stories = $burgundy->read($input);
+
+    foreach ($stories as $story) {
+        var_dump($story);
+    }
 } catch (RonException $e) {
     // Handle exceptions
 }
@@ -145,6 +157,10 @@ try
     $input = fopen('http://feeds.bbci.co.uk/news/technology/rss.xml', 'r');
 
     $stories = $burgundy->read($input);
+
+    foreach ($stories as $story) {
+        var_dump($story);
+    }
 } catch (RonException $e) {
     // Handle exceptions
 }
@@ -170,6 +186,10 @@ try
     $input = new SplFileInfo('http://feeds.bbci.co.uk/news/technology/rss.xml');
 
     $stories = $burgundy->read($input);
+
+    foreach ($stories as $story) {
+        var_dump($story);
+    }
 } catch (RonException $e) {
     // Handle exceptions
 }
