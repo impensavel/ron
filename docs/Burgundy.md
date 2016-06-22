@@ -49,7 +49,7 @@ try
     $stories = $burgundy->read($input);
 
     foreach ($stories as $story) {
-        var_dump($story);
+        var_dump($story->toArray());
     }
 } catch (RonException $e) {
     // Handle exceptions
@@ -90,7 +90,7 @@ try
     $stories = $burgundy->read($input);
 
     foreach ($stories as $story) {
-        var_dump($story);
+        var_dump($story->toArray());
     }
 } catch (RonException $e) {
     // Handle exceptions
@@ -130,7 +130,7 @@ EOT;
     $stories = $burgundy->read($input);
 
     foreach ($stories as $story) {
-        var_dump($story);
+        var_dump($story->toArray());
     }
 } catch (RonException $e) {
     // Handle exceptions
@@ -159,7 +159,7 @@ try
     $stories = $burgundy->read($input);
 
     foreach ($stories as $story) {
-        var_dump($story);
+        var_dump($story->toArray());
     }
 } catch (RonException $e) {
     // Handle exceptions
@@ -188,7 +188,7 @@ try
     $stories = $burgundy->read($input);
 
     foreach ($stories as $story) {
-        var_dump($story);
+        var_dump($story->toArray());
     }
 } catch (RonException $e) {
     // Handle exceptions
