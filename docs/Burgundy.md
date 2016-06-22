@@ -22,6 +22,7 @@ Following, are some examples of how to create a `Burgundy` instance using differ
 **Dependencies:**
 ``` bash
 composer require "impensavel/ron"
+composer require "php-http/message"
 composer require "php-http/guzzle6-adapter"
 ```
 
@@ -61,6 +62,7 @@ try
 **Dependencies:**
 ``` bash
 composer require "impensavel/ron"
+composer require "php-http/message"
 composer require "php-http/curl-client"
 composer require "guzzlehttp/psr7"
 ```
